@@ -50,8 +50,8 @@ export function AIBriefingCard({ narration }: { narration: string }) {
       style={{
         background: "rgba(10, 15, 26, 0.7)",
         backdropFilter: "blur(20px)",
-        border: "1px solid rgba(110,231,183,0.12)",
-        boxShadow: "0 4px 24px rgba(0,0,0,0.3), 0 0 20px rgba(110,231,183,0.05)",
+        border: "1px solid rgba(201, 100, 66,0.12)",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.3), 0 0 20px rgba(201, 100, 66,0.05)",
       }}
       initial={{ opacity: 0, y: -20, height: 0 }}
       animate={{ opacity: 1, y: 0, height: "auto" }}
@@ -61,7 +61,7 @@ export function AIBriefingCard({ narration }: { narration: string }) {
         <div className="flex items-center gap-2">
           <span className="text-base">🧠</span>
           <span className="text-xs font-bold text-aurora">AI Daily Briefing</span>
-          <span className="rounded-full px-2 py-0.5 text-[9px] font-bold" style={{ background: "rgba(110,231,183,0.1)", color: "#6EE7B7" }}>LIVE</span>
+          <span className="rounded-full px-2 py-0.5 text-[9px] font-bold" style={{ background: "rgba(201, 100, 66,0.1)", color: "#C96442" }}>LIVE</span>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={() => setExpanded(!expanded)} className="text-xs transition-all hover:scale-105" style={{ color: "rgba(255,255,255,0.4)" }}>
@@ -160,7 +160,7 @@ export function useAnomalyDetection(data: {
 }
 
 const SEVERITY_COLORS = {
-  info: { bg: "rgba(96,165,250,0.1)", border: "rgba(96,165,250,0.2)", text: "#60A5FA", icon: "ℹ️" },
+  info: { bg: "rgba(184, 168, 138,0.1)", border: "rgba(184, 168, 138,0.2)", text: "#B8A88A", icon: "ℹ️" },
   warning: { bg: "rgba(245,158,11,0.1)", border: "rgba(245,158,11,0.2)", text: "#F59E0B", icon: "⚠️" },
   critical: { bg: "rgba(239,68,68,0.1)", border: "rgba(239,68,68,0.2)", text: "#EF4444", icon: "🚨" },
 };

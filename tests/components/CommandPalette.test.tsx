@@ -25,13 +25,13 @@ describe('CommandPalette', () => {
     render(<CommandPalette onSelectTab={mockOnSelectTab} currentTab="overview" />)
 
     // Initially palette should not be visible
-    expect(screen.queryByPlaceholderText('Jump to tab...')).toBeNull()
+    expect(screen.queryByPlaceholderText('Search tabs, actions, AI features...')).toBeNull()
 
     // Press Cmd+K
     fireEvent.keyDown(window, { key: 'k', metaKey: true })
 
     await waitFor(() => {
-      expect(screen.getByPlaceholderText('Jump to tab...')).toBeTruthy()
+      expect(screen.getByPlaceholderText('Search tabs, actions, AI features...')).toBeTruthy()
     })
   })
 
@@ -41,14 +41,14 @@ describe('CommandPalette', () => {
     // Open
     fireEvent.keyDown(window, { key: 'k', metaKey: true })
     await waitFor(() => {
-      expect(screen.getByPlaceholderText('Jump to tab...')).toBeTruthy()
+      expect(screen.getByPlaceholderText('Search tabs, actions, AI features...')).toBeTruthy()
     })
 
     // Close
     fireEvent.keyDown(window, { key: 'Escape' })
 
     await waitFor(() => {
-      expect(screen.queryByPlaceholderText('Jump to tab...')).toBeNull()
+      expect(screen.queryByPlaceholderText('Search tabs, actions, AI features...')).toBeNull()
     })
   })
 
@@ -72,11 +72,11 @@ describe('CommandPalette', () => {
     fireEvent.keyDown(window, { key: 'k', metaKey: true })
 
     await waitFor(() => {
-      expect(screen.getByPlaceholderText('Jump to tab...')).toBeTruthy()
+      expect(screen.getByPlaceholderText('Search tabs, actions, AI features...')).toBeTruthy()
     })
 
     // Type a query
-    const input = screen.getByPlaceholderText('Jump to tab...')
+    const input = screen.getByPlaceholderText('Search tabs, actions, AI features...')
     await user.type(input, 'weath')
 
     // Wait for debounce
@@ -115,10 +115,10 @@ describe('CommandPalette', () => {
     fireEvent.keyDown(window, { key: 'k', metaKey: true })
 
     await waitFor(() => {
-      expect(screen.getByPlaceholderText('Jump to tab...')).toBeTruthy()
+      expect(screen.getByPlaceholderText('Search tabs, actions, AI features...')).toBeTruthy()
     })
 
-    const input = screen.getByPlaceholderText('Jump to tab...')
+    const input = screen.getByPlaceholderText('Search tabs, actions, AI features...')
 
     // Press Down arrow then Enter
     fireEvent.keyDown(input, { key: 'ArrowDown' })
@@ -135,14 +135,14 @@ describe('CommandPalette', () => {
     fireEvent.keyDown(window, { key: 'k', metaKey: true })
 
     await waitFor(() => {
-      expect(screen.getByPlaceholderText('Jump to tab...')).toBeTruthy()
+      expect(screen.getByPlaceholderText('Search tabs, actions, AI features...')).toBeTruthy()
     })
 
-    const input = screen.getByPlaceholderText('Jump to tab...')
+    const input = screen.getByPlaceholderText('Search tabs, actions, AI features...')
     await user.type(input, 'xyznonexistent')
 
     await waitFor(() => {
-      expect(screen.getByText(/No tabs match/)).toBeTruthy()
+      expect(screen.getByText(/No results for/i)).toBeTruthy()
     }, { timeout: 500 })
   })
 })

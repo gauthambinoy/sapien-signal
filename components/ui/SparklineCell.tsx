@@ -27,7 +27,7 @@ export default function SparklineCell({
           <Line
             type="monotone"
             dataKey="p"
-            stroke={isUp ? "#6EE7B7" : "#F87171"}
+            stroke={isUp ? "#C96442" : "#F87171"}
             strokeWidth={1.5}
             dot={false}
             isAnimationActive={false}

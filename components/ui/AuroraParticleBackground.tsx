@@ -20,11 +20,11 @@ interface Particle {
 
 const PARTICLE_COUNT = 80;
 const COLORS = [
-  "rgba(110, 231, 183, ",  // green
-  "rgba(34, 211, 238, ",   // cyan
-  "rgba(96, 165, 250, ",   // blue
-  "rgba(196, 181, 253, ",  // purple
-  "rgba(244, 114, 182, ",  // pink
+  "rgba(201, 100, 66, ",  // green
+  "rgba(217, 165, 116, ",   // cyan
+  "rgba(184, 168, 138, ",   // blue
+  "rgba(196, 156, 138, ",  // purple
+  "rgba(184, 123, 106, ",  // pink
 ];
 
 function createParticle(w: number, h: number): Particle {
@@ -125,7 +125,7 @@ export default function AuroraParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(110, 231, 183, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(201, 100, 66, ${lineAlpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -159,7 +159,7 @@ export default function AuroraParticleBackground() {
       <div
         className="absolute -right-[8%] top-[12%] h-[500px] w-[500px] rounded-full blur-[130px]"
         style={{
-          background: "radial-gradient(circle, rgba(34,211,238,0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(217, 165, 116,0.3) 0%, transparent 70%)",
           animation: "meshFloat2 25s ease-in-out infinite",
         }}
       />
@@ -173,14 +173,14 @@ export default function AuroraParticleBackground() {
       <div
         className="absolute -bottom-[8%] right-[10%] h-[350px] w-[350px] rounded-full blur-[110px]"
         style={{
-          background: "radial-gradient(circle, rgba(244,114,182,0.2) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(184, 123, 106,0.2) 0%, transparent 70%)",
           animation: "meshFloat1 28s ease-in-out infinite reverse",
         }}
       />
       <div
         className="absolute left-[45%] top-[40%] h-[300px] w-[300px] rounded-full blur-[100px]"
         style={{
-          background: "radial-gradient(circle, rgba(96,165,250,0.2) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(184, 168, 138,0.2) 0%, transparent 70%)",
           animation: "meshFloat3 30s ease-in-out infinite reverse",
         }}
       />

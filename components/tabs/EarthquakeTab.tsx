@@ -13,7 +13,7 @@ import { TOOLTIP_STYLE, AXIS_STYLE } from "@/lib/chart-theme";
 import type { Earthquake } from "@/lib/types";
 
 const WorldMap = dynamic(() => import("@/components/ui/WorldMap"), { ssr: false });
-const MAG_COLORS = ["#6EE7B7", "#FCD34D", "#FB923C", "#F87171", "#EF4444", "#DC2626", "#B91C1C"];
+const MAG_COLORS = ["#C96442", "#FCD34D", "#FB923C", "#F87171", "#EF4444", "#DC2626", "#B91C1C"];
 
 export default function EarthquakeTab() {
   const { quakes, isLoading, error, refresh } = useEarthquakes();

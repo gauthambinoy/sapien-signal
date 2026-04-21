@@ -85,12 +85,12 @@ function WorldMapInner({ points, height = 320, issPosition }: WorldMapProps) {
 
         {issPosition && (
           <Marker coordinates={[issPosition.longitude, issPosition.latitude]}>
-            <circle r={6} fill="#6EE7B7" opacity={0.3} className="animate-ping" />
-            <circle r={3} fill="#6EE7B7" stroke="#fff" strokeWidth={1} />
+            <circle r={6} fill="#C96442" opacity={0.3} className="animate-ping" />
+            <circle r={3} fill="#C96442" stroke="#fff" strokeWidth={1} />
             <text
               textAnchor="middle"
               y={-12}
-              fill="#6EE7B7"
+              fill="#C96442"
               fontSize={9}
               fontWeight="bold"
               fontFamily="inherit"

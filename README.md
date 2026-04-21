@@ -6,8 +6,8 @@
 
 **200+ free APIs · 15 interactive tabs · 3D WebGL Earth · Live data streams**
 
-[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Sapien_Signal-00d4ff?style=for-the-badge&logo=vercel&logoColor=white)](https://unified-world-data.vercel.app)
-[![CI](https://github.com/gauthambinoy/luma-earth-pulse/actions/workflows/ci.yml/badge.svg)](https://github.com/gauthambinoy/luma-earth-pulse/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Sapien_Signal-00d4ff?style=for-the-badge&logo=vercel&logoColor=white)](https://sapien-signal.vercel.app)
+[![CI](https://github.com/gauthambinoy/sapien-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/gauthambinoy/sapien-signal/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
 [![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
@@ -72,8 +72,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/gauthambinoy/luma-earth-pulse.git
-cd luma-earth-pulse
+git clone https://github.com/gauthambinoy/sapien-signal.git
+cd sapien-signal
 
 # Install dependencies
 npm install

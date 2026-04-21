@@ -47,7 +47,7 @@ export default function TechPulseTab() {
       <div className="mb-4 grid grid-cols-[repeat(auto-fill,minmax(155px,1fr))] gap-2.5">
         <MetricCard label="Trending Repos" value={String(trending.length)} numeric={trending.length} accent="#818CF8" sub="Created this week" />
         <MetricCard label="Total Stars" value={fmt(totalStars)} numeric={totalStars} format={fmt} accent="#FCD34D" sub="Combined stars" />
-        <MetricCard label="Total Forks" value={fmt(totalForks)} numeric={totalForks} format={fmt} accent="#6EE7B7" sub="Combined forks" />
+        <MetricCard label="Total Forks" value={fmt(totalForks)} numeric={totalForks} format={fmt} accent="#C96442" sub="Combined forks" />
         <MetricCard label="HN Top Stories" value={String(hnStories.length)} numeric={hnStories.length} accent="#FB923C" sub="Hacker News" />
       </div>
 

@@ -16,8 +16,8 @@ export default function ThemeToggle({ theme, onToggle, compact = false }: ThemeT
         compact ? "h-7 w-12" : "h-8 w-14"
       }`}
       style={{
-        background: theme === "dark" ? "rgba(110,231,183,0.15)" : "rgba(0,0,0,0.06)",
-        borderColor: theme === "dark" ? "rgba(110,231,183,0.3)" : "rgba(0,0,0,0.1)",
+        background: theme === "dark" ? "rgba(201, 100, 66,0.15)" : "rgba(0,0,0,0.06)",
+        borderColor: theme === "dark" ? "rgba(201, 100, 66,0.3)" : "rgba(0,0,0,0.1)",
       }}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >

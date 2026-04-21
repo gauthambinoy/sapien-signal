@@ -163,13 +163,13 @@ export default function CommandPalette({ onSelectTab, currentTab }: CommandPalet
                 backdropFilter: "blur(40px)",
                 WebkitBackdropFilter: "blur(40px)",
                 border: "1px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(110,231,183,0.05), inset 0 1px 0 rgba(255,255,255,0.06)",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.5), 0 0 40px rgba(201, 100, 66,0.05), inset 0 1px 0 rgba(255,255,255,0.06)",
               }}
             >
               {/* Search input */}
               <div className="flex items-center gap-3 border-b px-5 py-4" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: "rgba(110,231,183,0.1)" }}>
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#6EE7B7" strokeWidth={2}>
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: "rgba(201, 100, 66,0.1)" }}>
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#C96442" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                   </svg>
                 </div>
@@ -208,18 +208,18 @@ export default function CommandPalette({ onSelectTab, currentTab }: CommandPalet
                           onClick={() => handleSelect(item)}
                           className="group flex w-full items-center gap-3 px-5 py-2.5 text-left transition-all duration-150"
                           style={{
-                            background: isSelected ? "rgba(110,231,183,0.08)" : "transparent",
-                            borderLeft: isSelected ? "2px solid #6EE7B7" : "2px solid transparent",
+                            background: isSelected ? "rgba(201, 100, 66,0.08)" : "transparent",
+                            borderLeft: isSelected ? "2px solid #C96442" : "2px solid transparent",
                           }}
                         >
-                          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-base transition-transform duration-200 group-hover:scale-110" style={{ background: isSelected ? "rgba(110,231,183,0.12)" : "rgba(255,255,255,0.04)" }}>
+                          <span className="flex h-8 w-8 items-center justify-center rounded-lg text-base transition-transform duration-200 group-hover:scale-110" style={{ background: isSelected ? "rgba(201, 100, 66,0.12)" : "rgba(255,255,255,0.04)" }}>
                             {item.icon}
                           </span>
                           <div className="flex-1">
-                            <span className="text-sm font-medium" style={{ color: isSelected ? "#6EE7B7" : "#cbd5e1" }}>{item.label}</span>
+                            <span className="text-sm font-medium" style={{ color: isSelected ? "#C96442" : "#cbd5e1" }}>{item.label}</span>
                           </div>
                           {isActive && (
-                            <span className="rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider" style={{ background: "rgba(110,231,183,0.12)", color: "#6EE7B7" }}>
+                            <span className="rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider" style={{ background: "rgba(201, 100, 66,0.12)", color: "#C96442" }}>
                               active
                             </span>
                           )}

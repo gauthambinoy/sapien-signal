@@ -104,8 +104,8 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-xl glow-pulse"
                 style={{
-                  background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))",
-                  border: "1px solid rgba(110,231,183,0.2)",
+                  background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
+                  border: "1px solid rgba(201, 100, 66,0.2)",
                 }}
               >
                 <span className="text-xl">🌍</span>
@@ -121,8 +121,8 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
             <div
               className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl"
               style={{
-                background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))",
-                border: "1px solid rgba(110,231,183,0.2)",
+                background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
+                border: "1px solid rgba(201, 100, 66,0.2)",
               }}
             >
               <span className="text-xl">🌍</span>
@@ -187,11 +187,11 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
                           className="group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-all duration-300"
                           style={{
                             background: active
-                              ? "linear-gradient(135deg, rgba(110,231,183,0.12), rgba(34,211,238,0.06))"
+                              ? "linear-gradient(135deg, rgba(201, 100, 66,0.12), rgba(217, 165, 116,0.06))"
                               : "transparent",
                             color: active ? "var(--accent)" : "var(--text-secondary)",
-                            border: active ? "1px solid rgba(110,231,183,0.15)" : "1px solid transparent",
-                            boxShadow: active ? "0 0 15px rgba(110,231,183,0.08), inset 0 1px 0 rgba(255,255,255,0.04)" : "none",
+                            border: active ? "1px solid rgba(201, 100, 66,0.15)" : "1px solid transparent",
+                            boxShadow: active ? "0 0 15px rgba(201, 100, 66,0.08), inset 0 1px 0 rgba(255,255,255,0.04)" : "none",
                           }}
                           title={meta.label}
                         >
@@ -200,7 +200,7 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
                           {active && isOpen && (
                             <div
                               className="ml-auto h-2 w-2 rounded-full glow-pulse"
-                              style={{ background: "var(--accent)", boxShadow: "0 0 8px rgba(110,231,183,0.5)" }}
+                              style={{ background: "var(--accent)", boxShadow: "0 0 8px rgba(201, 100, 66,0.5)" }}
                             />
                           )}
                         </button>
@@ -257,7 +257,7 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
           )}
           {isOpen && (
             <a
-              href="https://github.com/gauthambinoy/luma-earth-pulse"
+              href="https://github.com/gauthambinoy/sapien-signal"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 flex items-center gap-1 text-[10px] transition hover:opacity-80"

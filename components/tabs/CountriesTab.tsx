@@ -17,11 +17,11 @@ import useSWR from "swr";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const REGION_COLORS: Record<string, string> = {
-  Africa: "#6EE7B7",
+  Africa: "#C96442",
   Americas: "#FCD34D",
   Asia: "#F87171",
-  Europe: "#60A5FA",
-  Oceania: "#C4B5FD",
+  Europe: "#B8A88A",
+  Oceania: "#C49C8A",
 };
 
 export default function CountriesTab() {

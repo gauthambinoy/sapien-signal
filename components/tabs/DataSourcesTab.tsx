@@ -7,7 +7,7 @@ import { ALL_APIS, FREE_APIS, PAID_APIS, API_CATEGORIES, API_COUNT, FREE_COUNT, 
 import { COLORS } from "@/lib/constants";
 import { TOOLTIP_STYLE, AXIS_STYLE } from "@/lib/chart-theme";
 
-const TIER_COLORS: Record<string, string> = { free: "#6EE7B7", freemium: "#FCD34D", paid: "#F87171" };
+const TIER_COLORS: Record<string, string> = { free: "#C96442", freemium: "#FCD34D", paid: "#F87171" };
 const TIER_LABELS: Record<string, string> = { free: "FREE", freemium: "FREEMIUM", paid: "PAID" };
 
 export default function DataSourcesTab() {
@@ -38,7 +38,7 @@ export default function DataSourcesTab() {
   );
 
   const tierBreakdown = [
-    { name: "Free (No Key)", value: FREE_COUNT, color: "#6EE7B7" },
+    { name: "Free (No Key)", value: FREE_COUNT, color: "#C96442" },
     { name: "Freemium", value: PAID_APIS.filter((a) => a.tier === "freemium").length, color: "#FCD34D" },
     { name: "Paid Only", value: PAID_APIS.filter((a) => a.tier === "paid").length, color: "#F87171" },
   ];
@@ -80,7 +80,7 @@ export default function DataSourcesTab() {
               <XAxis dataKey="name" tick={{ ...AXIS_STYLE, fontSize: 9 }} axisLine={false} tickLine={false} angle={-15} />
               <YAxis tick={AXIS_STYLE} axisLine={false} tickLine={false} />
               <Tooltip {...TOOLTIP_STYLE} />
-              <Bar dataKey="free" stackId="a" fill="#6EE7B7" radius={[0, 0, 0, 0]} />
+              <Bar dataKey="free" stackId="a" fill="#C96442" radius={[0, 0, 0, 0]} />
               <Bar dataKey="paid" stackId="a" fill="#FCD34D" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

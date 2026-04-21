@@ -108,8 +108,8 @@ export default function EarthBackground() {
 
       // Earth shadow/glow (atmosphere)
       const atmosGrad = ctx!.createRadialGradient(cx, cy, radius * 0.95, cx, cy, radius * 1.15);
-      atmosGrad.addColorStop(0, "rgba(110, 231, 183, 0.08)");
-      atmosGrad.addColorStop(0.5, "rgba(96, 165, 250, 0.04)");
+      atmosGrad.addColorStop(0, "rgba(201, 100, 66, 0.08)");
+      atmosGrad.addColorStop(0.5, "rgba(184, 168, 138, 0.04)");
       atmosGrad.addColorStop(1, "rgba(0, 0, 0, 0)");
       ctx!.fillStyle = atmosGrad;
       ctx!.beginPath();
@@ -128,7 +128,7 @@ export default function EarthBackground() {
       ctx!.fill();
 
       // Thin atmosphere ring
-      ctx!.strokeStyle = "rgba(110, 231, 183, 0.1)";
+      ctx!.strokeStyle = "rgba(201, 100, 66, 0.1)";
       ctx!.lineWidth = 1.5;
       ctx!.beginPath();
       ctx!.arc(cx, cy, radius + 2, 0, Math.PI * 2);

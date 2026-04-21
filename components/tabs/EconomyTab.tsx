@@ -17,10 +17,10 @@ import type { EconomyResponse, EconomyIndicator } from "@/lib/types";
 const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const INDICATORS = [
-  { id: "gdp", label: "GDP (USD)", color: "#6EE7B7" },
-  { id: "population", label: "Population", color: "#60A5FA" },
+  { id: "gdp", label: "GDP (USD)", color: "#C96442" },
+  { id: "population", label: "Population", color: "#B8A88A" },
   { id: "inflation", label: "Inflation %", color: "#F87171" },
-  { id: "lifeExpectancy", label: "Life Expectancy", color: "#C4B5FD" },
+  { id: "lifeExpectancy", label: "Life Expectancy", color: "#C49C8A" },
   { id: "unemployment", label: "Unemployment %", color: "#FCD34D" },
   { id: "co2", label: "CO2 per Capita", color: "#FB923C" },
 ] as const;

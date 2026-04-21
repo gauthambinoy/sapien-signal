@@ -22,7 +22,7 @@ function kpLabel(kp: number): string {
 }
 
 function kpColor(kp: number): string {
-  if (kp <= 1) return "#6EE7B7";
+  if (kp <= 1) return "#C96442";
   if (kp <= 3) return "#FCD34D";
   if (kp <= 5) return "#FB923C";
   return "#F87171";
@@ -63,12 +63,12 @@ export default function SpaceTab() {
       <div className="mb-4 grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2.5">
         <MetricCard label="NEO This Week" value={String(neoCount)} numeric={neoCount} accent="#FCD34D" sub="Near-Earth Objects" />
         <MetricCard label="Hazardous" value={String(hazardousCount)} numeric={hazardousCount} accent="#F87171" sub="Potentially dangerous" />
-        <MetricCard label="Closest Approach" value={fmt(closestApproachKm) + " km"} accent="#60A5FA" sub="Nearest fly-by" />
+        <MetricCard label="Closest Approach" value={fmt(closestApproachKm) + " km"} accent="#B8A88A" sub="Nearest fly-by" />
         <MetricCard
           label="Astronauts in Space"
           value={String(astronauts.length)}
           numeric={astronauts.length}
-          accent="#C4B5FD"
+          accent="#C49C8A"
           sub="Currently aboard ISS/stations"
         />
         {solarWind && (

@@ -53,7 +53,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
         className="absolute inset-0 z-[1]"
         style={{
           background:
-            "radial-gradient(circle at 72% 40%, rgba(8,145,178,0.2) 0%, transparent 24%), radial-gradient(circle at 22% 24%, rgba(96,165,250,0.15) 0%, transparent 20%), linear-gradient(180deg, rgba(2,6,23,0.38) 0%, rgba(2,6,23,0.74) 42%, rgba(2,6,23,0.96) 100%)",
+            "radial-gradient(circle at 72% 40%, rgba(8,145,178,0.2) 0%, transparent 24%), radial-gradient(circle at 22% 24%, rgba(184, 168, 138,0.15) 0%, transparent 20%), linear-gradient(180deg, rgba(2,6,23,0.38) 0%, rgba(2,6,23,0.74) 42%, rgba(2,6,23,0.96) 100%)",
         }}
       />
 
@@ -61,12 +61,12 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
         <div className="flex items-center gap-3">
           <div
             className="flex h-10 w-10 items-center justify-center rounded-xl"
-            style={{ background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))", border: "1px solid rgba(110,231,183,0.2)" }}
+            style={{ background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))", border: "1px solid rgba(201, 100, 66,0.2)" }}
           >
             <span className="text-lg">🌍</span>
           </div>
           <span className="text-base font-bold tracking-wider text-white">
-            <span style={{ color: "#6EE7B7" }}>SAPIEN</span> SIGNAL
+            <span style={{ color: "#C96442" }}>SAPIEN</span> SIGNAL
           </span>
         </div>
 
@@ -78,8 +78,8 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
             onClick={onEnter}
             className="rounded-xl px-5 py-2.5 text-xs font-bold tracking-wider text-white transition-all hover:scale-105"
             style={{
-              background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))",
-              border: "1px solid rgba(110,231,183,0.25)",
+              background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
+              border: "1px solid rgba(201, 100, 66,0.25)",
               backdropFilter: "blur(10px)",
             }}
           >
@@ -125,7 +125,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
           >
             <div
               className="mb-5 inline-flex rounded-full px-4 py-2 text-[11px] font-bold tracking-[0.26em]"
-              style={{ background: "rgba(110,231,183,0.08)", border: "1px solid rgba(110,231,183,0.16)", color: "#6EE7B7" }}
+              style={{ background: "rgba(201, 100, 66,0.08)", border: "1px solid rgba(201, 100, 66,0.16)", color: "#C96442" }}
             >
               REAL EARTH / LIVE CIVILIZATION
             </div>
@@ -163,9 +163,9 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
                 onClick={onEnter}
                 className="group flex items-center gap-2 rounded-2xl px-8 py-4 text-sm font-bold tracking-wider text-white transition-all duration-300 hover:scale-105"
                 style={{
-                  background: "linear-gradient(135deg, rgba(110,231,183,0.2), rgba(34,211,238,0.14))",
-                  border: "1px solid rgba(110,231,183,0.3)",
-                  boxShadow: "0 0 30px rgba(110,231,183,0.12), 0 10px 40px rgba(0,0,0,0.35)",
+                  background: "linear-gradient(135deg, rgba(201, 100, 66,0.2), rgba(217, 165, 116,0.14))",
+                  border: "1px solid rgba(201, 100, 66,0.3)",
+                  boxShadow: "0 0 30px rgba(201, 100, 66,0.12), 0 10px 40px rgba(0,0,0,0.35)",
                   backdropFilter: "blur(10px)",
                 }}
               >
@@ -175,7 +175,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
                 </svg>
               </button>
               <a
-                href="https://github.com/gauthambinoy/luma-earth-pulse"
+                href="https://github.com/gauthambinoy/sapien-signal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-2xl px-6 py-4 text-sm font-semibold text-white/60 transition-all hover:text-white/85"

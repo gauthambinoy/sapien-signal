@@ -17,8 +17,8 @@ describe('MetricCard', () => {
     const { container } = render(
       <MetricCard label="Market Cap" value="$1.2T" numeric={1200000000000} />
     )
-    // AnimatedNumber renders a span element
-    const valueContainer = container.querySelector('.text-3xl')
+    // AnimatedNumber renders inside the value container
+    const valueContainer = container.querySelector('.text-2xl')
     expect(valueContainer).toBeTruthy()
   })
 
@@ -31,7 +31,7 @@ describe('MetricCard', () => {
     const { container } = render(
       <MetricCard label="Test" value="100" accent="#ef4444" />
     )
-    const valueEl = container.querySelector('.text-3xl')
+    const valueEl = container.querySelector('.text-2xl')
     expect(valueEl).toBeTruthy()
     // JSDOM converts hex to rgb
     const style = valueEl?.getAttribute('style') ?? ''

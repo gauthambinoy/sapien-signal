@@ -243,7 +243,7 @@ export default function InteractiveMap() {
     >
       <div className="flex flex-wrap items-center justify-between gap-3 border-b px-5 py-3.5" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl" style={{ background: "rgba(110,231,183,0.1)", border: "1px solid rgba(110,231,183,0.15)" }}>
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl" style={{ background: "rgba(201, 100, 66,0.1)", border: "1px solid rgba(201, 100, 66,0.15)" }}>
             <span className="text-sm">🛰️</span>
           </div>
           <div>
@@ -270,7 +270,7 @@ export default function InteractiveMap() {
           <button
             onClick={toggleFullscreen}
             className="rounded-full px-3 py-1.5 text-[11px] font-semibold"
-            style={{ background: "rgba(96,165,250,0.12)", border: "1px solid rgba(96,165,250,0.24)", color: "#93c5fd" }}
+            style={{ background: "rgba(184, 168, 138,0.12)", border: "1px solid rgba(184, 168, 138,0.24)", color: "#93c5fd" }}
           >
             {isFullscreen ? "Exit Fullscreen" : "Fullscreen 4K View"}
           </button>

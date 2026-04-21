@@ -46,7 +46,7 @@ function GlassPanel({ children, className = "", glow }: { children: React.ReactN
 function SectionHead({ icon, title, sub }: { icon: string; title: string; sub?: string }) {
   return (
     <div className="mb-4 flex items-center gap-3">
-      <div className="flex h-9 w-9 items-center justify-center rounded-xl" style={{ background: "rgba(110,231,183,0.08)", border: "1px solid rgba(110,231,183,0.12)" }}>
+      <div className="flex h-9 w-9 items-center justify-center rounded-xl" style={{ background: "rgba(201, 100, 66,0.08)", border: "1px solid rgba(201, 100, 66,0.12)" }}>
         <span className="text-base">{icon}</span>
       </div>
       <div>
@@ -140,14 +140,14 @@ export default function OverviewTab() {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(circle at 72% 26%, rgba(34,211,238,0.18) 0%, transparent 22%), linear-gradient(120deg, rgba(2,6,23,0.16) 0%, rgba(2,6,23,0.72) 48%, rgba(2,6,23,0.94) 100%)",
+                "radial-gradient(circle at 72% 26%, rgba(217, 165, 116,0.18) 0%, transparent 22%), linear-gradient(120deg, rgba(2,6,23,0.16) 0%, rgba(2,6,23,0.72) 48%, rgba(2,6,23,0.94) 100%)",
             }}
           />
 
           <div className="relative grid gap-6 p-6 lg:grid-cols-[1.08fr_0.92fr] lg:p-8">
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold tracking-[0.22em]" style={{ background: "rgba(110,231,183,0.08)", border: "1px solid rgba(110,231,183,0.16)", color: "#6EE7B7" }}>
+                <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold tracking-[0.22em]" style={{ background: "rgba(201, 100, 66,0.08)", border: "1px solid rgba(201, 100, 66,0.16)", color: "#C96442" }}>
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
@@ -217,9 +217,9 @@ export default function OverviewTab() {
           <InteractiveMap />
         </motion.div>
 
-        <GlassPanel glow="rgba(96,165,250,0.06)">
+        <GlassPanel glow="rgba(184, 168, 138,0.06)">
           <div className="relative p-5">
-            <div className="absolute right-5 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider" style={{ background: "rgba(96,165,250,0.1)", color: "#60A5FA", border: "1px solid rgba(96,165,250,0.15)" }}>
+            <div className="absolute right-5 top-4 rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider" style={{ background: "rgba(184, 168, 138,0.1)", color: "#B8A88A", border: "1px solid rgba(184, 168, 138,0.15)" }}>
               AI BRIEFING
             </div>
             <div className="mb-3 flex items-center gap-2">
@@ -413,7 +413,7 @@ export default function OverviewTab() {
             <div className="p-5">
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-white/60">COVID-19 Breakdown</span>
-                <span className="rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ background: "rgba(59,130,246,0.1)", color: "#60A5FA" }}>GLOBAL</span>
+                <span className="rounded-full px-2 py-0.5 text-[10px] font-semibold" style={{ background: "rgba(59,130,246,0.1)", color: "#B8A88A" }}>GLOBAL</span>
               </div>
               {hl || healthPie.length === 0 ? <SkeletonLoader height={180} variant="chart" /> : (
                 <>

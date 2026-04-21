@@ -71,7 +71,7 @@ export default function MetricCard({
         <div
           className="absolute left-0 right-0 top-0 h-[2px]"
           style={{
-            background: `linear-gradient(90deg, transparent, ${accent}, rgba(34,211,238,0.7), transparent)`,
+            background: `linear-gradient(90deg, transparent, ${accent}, rgba(217, 165, 116,0.7), transparent)`,
             boxShadow: `0 0 12px ${accent}40`,
           }}
         />
@@ -114,14 +114,14 @@ export default function MetricCard({
               className="rounded-lg px-3 py-2"
               style={{
                 background: "rgba(10,15,26,0.9)",
-                border: "1px solid rgba(110,231,183,0.15)",
+                border: "1px solid rgba(201, 100, 66,0.15)",
                 backdropFilter: "blur(12px)",
                 animation: "tooltipIn 0.2s ease-out",
               }}
             >
               <div className="flex items-start gap-1.5">
                 <span className="text-[10px]">🧠</span>
-                <span className="text-[10px] leading-relaxed" style={{ color: "rgba(110,231,183,0.8)" }}>{insight}</span>
+                <span className="text-[10px] leading-relaxed" style={{ color: "rgba(201, 100, 66,0.8)" }}>{insight}</span>
               </div>
             </div>
           </div>

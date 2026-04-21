@@ -20,8 +20,8 @@ export interface Notification {
 }
 
 const TYPE_STYLES: Record<NotificationType, { border: string; bg: string; icon: string }> = {
-  info: { border: "rgba(96,165,250,0.4)", bg: "rgba(96,165,250,0.08)", icon: "ℹ️" },
-  success: { border: "rgba(110,231,183,0.4)", bg: "rgba(110,231,183,0.08)", icon: "✅" },
+  info: { border: "rgba(184, 168, 138,0.4)", bg: "rgba(184, 168, 138,0.08)", icon: "ℹ️" },
+  success: { border: "rgba(201, 100, 66,0.4)", bg: "rgba(201, 100, 66,0.08)", icon: "✅" },
   warning: { border: "rgba(251,191,36,0.4)", bg: "rgba(251,191,36,0.08)", icon: "⚠️" },
   alert: { border: "rgba(248,113,113,0.4)", bg: "rgba(248,113,113,0.08)", icon: "🚨" },
 };

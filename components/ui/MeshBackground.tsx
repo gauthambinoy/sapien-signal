@@ -31,7 +31,7 @@ export default function MeshBackground() {
       <div
         className="absolute -bottom-[10%] right-[15%] h-[300px] w-[300px] rounded-full blur-[100px]"
         style={{
-          background: "radial-gradient(circle, rgba(244,114,182,0.25) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(184, 123, 106,0.25) 0%, transparent 70%)",
           animation: "meshFloat1 28s ease-in-out infinite reverse",
         }}
       />

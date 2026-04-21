@@ -80,7 +80,7 @@ export default function MarketsTab() {
       render: (c: CryptoMarket) => {
         const up = (c.price_change_percentage_24h || 0) >= 0;
         return (
-          <span className="text-xs font-semibold" style={{ color: up ? "#6EE7B7" : "#F87171" }}>
+          <span className="text-xs font-semibold" style={{ color: up ? "#C96442" : "#F87171" }}>
             {up ? "▲" : "▼"} {Math.abs(c.price_change_percentage_24h || 0).toFixed(2)}%
           </span>
         );
@@ -108,10 +108,10 @@ export default function MarketsTab() {
   return (
     <div>
       <div className="mb-4 grid grid-cols-[repeat(auto-fill,minmax(165px,1fr))] gap-2.5">
-        <MetricCard label="Total Market Cap" value={fmtUsd(totalCap)} numeric={totalCap} format={fmtUsd} sub="Top 20 coins" accent="#C4B5FD" glow />
-        <MetricCard label="24h Volume" value={fmtUsd(totalVol)} numeric={totalVol} format={fmtUsd} sub="Trading activity" accent="#60A5FA" />
+        <MetricCard label="Total Market Cap" value={fmtUsd(totalCap)} numeric={totalCap} format={fmtUsd} sub="Top 20 coins" accent="#C49C8A" glow />
+        <MetricCard label="24h Volume" value={fmtUsd(totalVol)} numeric={totalVol} format={fmtUsd} sub="Trading activity" accent="#B8A88A" />
         <MetricCard label="BTC Dominance" value={btcDom + "%"} accent="#FCD34D" sub="Of top 20 market cap" />
-        <MetricCard label="Coins Listed" value="20" accent="#6EE7B7" sub="By market cap rank" />
+        <MetricCard label="Coins Listed" value="20" accent="#C96442" sub="By market cap rank" />
       </div>
 
       <div className="mb-3.5 rounded-2xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

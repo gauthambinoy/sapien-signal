@@ -95,7 +95,7 @@ export function SmartTooltip({ content, insight, children, position = "top" }: S
               background: "rgba(10, 15, 26, 0.9)",
               backdropFilter: "blur(20px)",
               border: "1px solid rgba(255,255,255,0.1)",
-              boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(110,231,183,0.05)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(201, 100, 66,0.05)",
               animation: "tooltipIn 0.2s ease-out",
             }}
           >
@@ -103,7 +103,7 @@ export function SmartTooltip({ content, insight, children, position = "top" }: S
             {insight && (
               <div className="mt-1.5 flex items-start gap-1.5 border-t pt-1.5" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <span className="text-[10px]">🧠</span>
-                <span className="text-[10px] leading-relaxed" style={{ color: "rgba(110,231,183,0.8)" }}>{insight}</span>
+                <span className="text-[10px] leading-relaxed" style={{ color: "rgba(201, 100, 66,0.8)" }}>{insight}</span>
               </div>
             )}
           </div>

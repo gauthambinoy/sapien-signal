@@ -61,9 +61,9 @@ export default function ForexTab() {
             onClick={() => setSelectedPair(cur)}
             className="rounded border px-2.5 py-1 font-mono text-xs transition"
             style={{
-              background: selectedPair === cur ? "rgba(110,231,183,0.12)" : "transparent",
-              borderColor: selectedPair === cur ? "rgba(110,231,183,0.4)" : "var(--border)",
-              color: selectedPair === cur ? "#6EE7B7" : "var(--text-tertiary)",
+              background: selectedPair === cur ? "rgba(201, 100, 66,0.12)" : "transparent",
+              borderColor: selectedPair === cur ? "rgba(201, 100, 66,0.4)" : "var(--border)",
+              color: selectedPair === cur ? "#C96442" : "var(--text-tertiary)",
             }}
           >
             {CURRENCY_FLAGS[cur]} {cur}
@@ -83,7 +83,7 @@ export default function ForexTab() {
               <XAxis dataKey="date" tick={AXIS_STYLE} axisLine={false} tickLine={false} />
               <YAxis tick={AXIS_STYLE} axisLine={false} tickLine={false} domain={["auto", "auto"]} />
               <Tooltip {...TOOLTIP_STYLE} />
-              <Line type="monotone" dataKey="rate" stroke="#6EE7B7" strokeWidth={2} dot={false} />
+              <Line type="monotone" dataKey="rate" stroke="#C96442" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         ) : (

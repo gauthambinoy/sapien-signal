@@ -127,18 +127,18 @@ export default function AIChatSidebar() {
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-2xl"
         style={{
-          background: "linear-gradient(135deg, rgba(110,231,183,0.2), rgba(34,211,238,0.15))",
-          border: "1px solid rgba(110,231,183,0.25)",
+          background: "linear-gradient(135deg, rgba(201, 100, 66,0.2), rgba(217, 165, 116,0.15))",
+          border: "1px solid rgba(201, 100, 66,0.25)",
           backdropFilter: "blur(20px)",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(110,231,183,0.15)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.3), 0 0 20px rgba(201, 100, 66,0.15)",
         }}
-        whileHover={{ scale: 1.1, boxShadow: "0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(110,231,183,0.25)" }}
+        whileHover={{ scale: 1.1, boxShadow: "0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(201, 100, 66,0.25)" }}
         whileTap={{ scale: 0.95 }}
         animate={isOpen ? { opacity: 0, scale: 0 } : { opacity: 1, scale: 1 }}
       >
         <span className="text-2xl">🧠</span>
         {/* Pulse ring */}
-        <div className="absolute inset-0 rounded-2xl" style={{ border: "2px solid rgba(110,231,183,0.3)", animation: "ping 2s cubic-bezier(0,0,0.2,1) infinite" }} />
+        <div className="absolute inset-0 rounded-2xl" style={{ border: "2px solid rgba(201, 100, 66,0.3)", animation: "ping 2s cubic-bezier(0,0,0.2,1) infinite" }} />
       </motion.button>
 
       {/* Chat sidebar */}
@@ -170,12 +170,12 @@ export default function AIChatSidebar() {
               {/* Header */}
               <div className="flex items-center justify-between border-b px-5 py-4" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))", border: "1px solid rgba(110,231,183,0.2)" }}>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))", border: "1px solid rgba(201, 100, 66,0.2)" }}>
                     <span className="text-lg">🧠</span>
                   </div>
                   <div>
                     <div className="text-sm font-bold text-aurora">Sapien AI</div>
-                    <div className="flex items-center gap-1.5 text-[10px]" style={{ color: "rgba(110,231,183,0.7)" }}>
+                    <div className="flex items-center gap-1.5 text-[10px]" style={{ color: "rgba(201, 100, 66,0.7)" }}>
                       <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" style={{ boxShadow: "0 0 6px rgba(52,211,153,0.6)" }} />
                       Online · Analyzing data
                     </div>
@@ -203,8 +203,8 @@ export default function AIChatSidebar() {
                     <div
                       className="max-w-[85%] rounded-2xl px-4 py-3"
                       style={msg.role === "user" ? {
-                        background: "linear-gradient(135deg, rgba(110,231,183,0.15), rgba(34,211,238,0.1))",
-                        border: "1px solid rgba(110,231,183,0.2)",
+                        background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
+                        border: "1px solid rgba(201, 100, 66,0.2)",
                       } : {
                         background: "rgba(255,255,255,0.04)",
                         border: "1px solid rgba(255,255,255,0.06)",
@@ -228,7 +228,7 @@ export default function AIChatSidebar() {
                           key={i}
                           className="h-1.5 w-1.5 rounded-full"
                           style={{
-                            background: "#6EE7B7",
+                            background: "#C96442",
                             animation: `skeletonDotBounce 1.2s ease-in-out ${i * 0.15}s infinite`,
                           }}
                         />
@@ -274,9 +274,9 @@ export default function AIChatSidebar() {
                     type="submit"
                     disabled={!input.trim() || isTyping}
                     className="flex h-8 w-8 items-center justify-center rounded-lg transition-all hover:scale-110 disabled:opacity-30"
-                    style={{ background: input.trim() ? "rgba(110,231,183,0.15)" : "transparent" }}
+                    style={{ background: input.trim() ? "rgba(201, 100, 66,0.15)" : "transparent" }}
                   >
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#6EE7B7" strokeWidth={2}>
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="#C96442" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
                     </svg>
                   </button>

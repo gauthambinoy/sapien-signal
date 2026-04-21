@@ -223,8 +223,8 @@ export function StoryNarrationOverlay({ stop, narration, progress, onStop }: { s
       style={{
         background: "rgba(10, 15, 26, 0.9)",
         backdropFilter: "blur(30px)",
-        border: "1px solid rgba(110,231,183,0.15)",
-        boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(110,231,183,0.08)",
+        border: "1px solid rgba(201, 100, 66,0.15)",
+        boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201, 100, 66,0.08)",
       }}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -234,7 +234,7 @@ export function StoryNarrationOverlay({ stop, narration, progress, onStop }: { s
       <div className="h-0.5 w-full" style={{ background: "rgba(255,255,255,0.05)" }}>
         <motion.div
           className="h-full"
-          style={{ background: "linear-gradient(90deg, #6EE7B7, #22D3EE)" }}
+          style={{ background: "linear-gradient(90deg, #C96442, #D9A574)" }}
           animate={{ width: `${progress * 100}%` }}
           transition={{ duration: 0.5 }}
         />

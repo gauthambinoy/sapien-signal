@@ -113,14 +113,14 @@ export default function SkeletonLoader({ height = 120, message = "Loading data..
         <div
           className="absolute h-12 w-12 rounded-full"
           style={{
-            border: "2px solid rgba(110,231,183,0.1)",
+            border: "2px solid rgba(201, 100, 66,0.1)",
             animation: "spin 3s linear infinite",
           }}
         />
         <div
           className="absolute h-8 w-8 rounded-full"
           style={{
-            border: "2px solid rgba(34,211,238,0.15)",
+            border: "2px solid rgba(217, 165, 116,0.15)",
             animation: "spin 2s linear infinite reverse",
           }}
         />
@@ -131,9 +131,9 @@ export default function SkeletonLoader({ height = 120, message = "Loading data..
               key={i}
               className="h-2 w-2 rounded-full"
               style={{
-                background: ["#6EE7B7", "#22D3EE", "#60A5FA"][i],
+                background: ["#C96442", "#D9A574", "#B8A88A"][i],
                 animation: `skeletonDotBounce 1.4s ease-in-out ${i * 0.15}s infinite`,
-                boxShadow: `0 0 12px ${["rgba(110,231,183,0.5)", "rgba(34,211,238,0.5)", "rgba(96,165,250,0.5)"][i]}`,
+                boxShadow: `0 0 12px ${["rgba(201, 100, 66,0.5)", "rgba(217, 165, 116,0.5)", "rgba(184, 168, 138,0.5)"][i]}`,
               }}
             />
           ))}

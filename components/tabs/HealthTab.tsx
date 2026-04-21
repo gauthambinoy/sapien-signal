@@ -24,13 +24,13 @@ export default function HealthTab() {
     { n: "Active", v: health.active },
     { n: "Deaths", v: health.deaths },
   ];
-  const pieColors = ["#6EE7B7", "#FCD34D", "#F87171"];
+  const pieColors = ["#C96442", "#FCD34D", "#F87171"];
 
   const rates = [
     { l: "Case Fatality Rate", v: ((health.deaths / health.cases) * 100).toFixed(2) + "%", c: "#F87171" },
-    { l: "Recovery Rate", v: ((health.recovered / health.cases) * 100).toFixed(1) + "%", c: "#6EE7B7" },
-    { l: "Tests per Million", v: fmt(Math.round(health.testsPerOneMillion)), c: "#C4B5FD" },
-    { l: "Cases per Million", v: fmt(Math.round(health.casesPerOneMillion)), c: "#60A5FA" },
+    { l: "Recovery Rate", v: ((health.recovered / health.cases) * 100).toFixed(1) + "%", c: "#C96442" },
+    { l: "Tests per Million", v: fmt(Math.round(health.testsPerOneMillion)), c: "#C49C8A" },
+    { l: "Cases per Million", v: fmt(Math.round(health.casesPerOneMillion)), c: "#B8A88A" },
     { l: "Deaths per Million", v: fmt(Math.round(health.deathsPerOneMillion)), c: "#F87171" },
     { l: "Population Affected", v: ((health.cases / 7.9e9) * 100).toFixed(2) + "%", c: "#FCD34D" },
   ];
@@ -56,12 +56,12 @@ export default function HealthTab() {
   return (
     <div>
       <div className="mb-4 grid grid-cols-[repeat(auto-fill,minmax(165px,1fr))] gap-2.5">
-        <MetricCard label="Total Cases" value={fmt(health.cases)} sub="All-time global" accent="#60A5FA" />
+        <MetricCard label="Total Cases" value={fmt(health.cases)} sub="All-time global" accent="#B8A88A" />
         <MetricCard label="Deaths" value={fmt(health.deaths)} sub="All-time global" accent="#F87171" />
-        <MetricCard label="Recovered" value={fmt(health.recovered)} sub="Total recovered" accent="#6EE7B7" />
+        <MetricCard label="Recovered" value={fmt(health.recovered)} sub="Total recovered" accent="#C96442" />
         <MetricCard label="Active" value={fmt(health.active)} sub="Currently active" accent="#FCD34D" />
         <MetricCard label="Critical" value={fmt(health.critical)} sub="ICU / critical" accent="#FB923C" />
-        <MetricCard label="Tests" value={fmt(health.tests)} sub="Total conducted" accent="#C4B5FD" />
+        <MetricCard label="Tests" value={fmt(health.tests)} sub="Total conducted" accent="#C49C8A" />
       </div>
 
       <div className="mb-4 grid grid-cols-1 gap-3 md:grid-cols-2">
@@ -76,7 +76,7 @@ export default function HealthTab() {
             </PieChart>
           </ResponsiveContainer>
           <div className="flex flex-wrap justify-center gap-3.5">
-            {[["Recovered", "#6EE7B7"], ["Active", "#FCD34D"], ["Deaths", "#F87171"]].map(([l, c]) => (
+            {[["Recovered", "#C96442"], ["Active", "#FCD34D"], ["Deaths", "#F87171"]].map(([l, c]) => (
               <div key={l} className="flex items-center gap-1 text-xs" style={{ color: "var(--text-tertiary)" }}>
                 <div className="h-[7px] w-[7px] rounded-full" style={{ background: c }} />
                 {l}
