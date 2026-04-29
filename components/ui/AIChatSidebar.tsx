@@ -20,7 +20,7 @@ const AI_RESPONSES: Record<string, string> = {
   energy: "⚡ Global energy markets are transitioning. Renewable energy capacity continues to grow, with solar and wind leading the charge. Oil prices remain influenced by geopolitical factors.",
   climate: "🌡️ Climate data indicates continued warming trends. Arctic sea ice extent is being closely monitored, along with ocean temperature anomalies and atmospheric CO2 levels.",
   news: "📰 Today's major headlines span geopolitics, technology breakthroughs, and economic developments. I can provide detailed analysis on any specific topic.",
-  default: "🧠 I'm Sapien Signal's AI assistant. I can help you understand world data, analyze trends, and provide insights across all data categories — weather, earthquakes, markets, health, space, energy, and more. What would you like to know?",
+  default: "🧠 I'm Global Signals's AI assistant. I can help you understand world data, analyze trends, and provide insights across all data categories — weather, earthquakes, markets, health, space, energy, and more. What would you like to know?",
 };
 
 function getAIResponse(query: string): string {
@@ -29,7 +29,7 @@ function getAIResponse(query: string): string {
     if (key !== "default" && q.includes(key)) return response;
   }
   if (q.includes("hello") || q.includes("hi") || q.includes("hey")) {
-    return "👋 Hello! I'm Sapien Signal AI. I can help you analyze world data, spot trends, and generate insights. Ask me anything about global metrics!";
+    return "👋 Hello! I'm Global Signals AI. I can help you analyze world data, spot trends, and generate insights. Ask me anything about global metrics!";
   }
   if (q.includes("anomal") || q.includes("unusual") || q.includes("spike")) {
     return "⚡ Running anomaly detection across all data streams... I'm monitoring for unusual patterns in seismic activity, market movements, weather extremes, and more. Currently tracking several noteworthy deviations from baseline.";
@@ -70,7 +70,7 @@ export default function AIChatSidebar() {
       setMessages([{
         id: "welcome",
         role: "ai",
-        content: "👋 Welcome to **Sapien Signal AI**! I can analyze real-time world data, detect anomalies, and provide intelligent insights. Ask me anything!",
+        content: "👋 Welcome to **Global Signals AI**! I can analyze real-time world data, detect anomalies, and provide intelligent insights. Ask me anything!",
         timestamp: new Date(),
       }]);
     }
@@ -282,7 +282,7 @@ export default function AIChatSidebar() {
                   </button>
                 </div>
                 <div className="mt-2 flex items-center justify-between text-[9px]" style={{ color: "rgba(255,255,255,0.2)" }}>
-                  <span>Powered by Sapien Signal Intelligence</span>
+                  <span>Powered by Global Signals Intelligence</span>
                   <span className="flex items-center gap-1">
                     <kbd className="rounded px-1 py-0.5 font-mono" style={{ background: "rgba(255,255,255,0.06)" }}>⌘J</kbd>
                     toggle

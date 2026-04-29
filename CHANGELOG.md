@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to **Sapien Signal** are documented here.
+All notable changes to **Global Signals** are documented here.
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 and [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
@@ -19,8 +19,8 @@ and [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Added `Viewport` export with adaptive `themeColor`.
 
 ### 🧹 Repo consolidation
-- Merged `luma-earth-pulse` into this repo. `sapien-signal` is now the single canonical project.
-- Updated all in-repo URLs and CI badges to `gauthambinoy/sapien-signal`.
+- Merged `luma-earth-pulse` into this repo. `global-signals-dashboard` is now the single canonical project.
+- Updated all in-repo URLs and CI badges to `gauthambinoy/global-signals-dashboard`.
 - Old repo will be archived on GitHub with a redirect notice.
 
 ### 🛠 Polish

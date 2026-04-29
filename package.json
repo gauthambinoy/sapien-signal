@@ -1,5 +1,5 @@
 {
-  "name": "sapien-signal",
+  "name": "global-signals-dashboard",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run build"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",

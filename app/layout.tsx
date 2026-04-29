@@ -26,12 +26,12 @@ const jetMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sapien-signal.vercel.app"),
   title: {
-    default: "Sapien Signal — The Pulse of Human Civilization",
-    template: "%s · Sapien Signal",
+    default: "Global Signals — Real-Time Global Intelligence",
+    template: "%s · Global Signals",
   },
   description:
-    "A real-time, editorial dashboard of our world. 200+ free APIs streaming weather, earthquakes, markets, forex, energy, space, and the human story — through a 3D interactive Earth.",
-  applicationName: "Sapien Signal",
+    "A real-time global intelligence dashboard aggregating public APIs across weather, earthquakes, markets, forex, energy, space, health, and technology signals.",
+  applicationName: "Global Signals",
   authors: [{ name: "Gautham Binoy", url: "https://github.com/gauthambinoy" }],
   keywords: [
     "real-time dashboard",
@@ -43,15 +43,15 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    title: "Sapien Signal — The Pulse of Human Civilization",
+    title: "Global Signals — Real-Time Global Intelligence",
     description:
       "Real-time global intelligence dashboard with 200+ APIs, 3D Earth, and editorial design.",
-    siteName: "Sapien Signal",
+    siteName: "Global Signals",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sapien Signal",
-    description: "The pulse of human civilization, in real time.",
+    title: "Global Signals",
+    description: "Real-time global intelligence powered by public data.",
   },
   robots: { index: true, follow: true },
 };

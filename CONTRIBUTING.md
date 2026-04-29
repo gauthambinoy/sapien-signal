@@ -1,4 +1,4 @@
-# Contributing to Sapien Signal
+# Contributing to Global Signals
 
 ## Getting Started
 

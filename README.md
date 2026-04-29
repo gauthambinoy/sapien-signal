@@ -1,198 +1,148 @@
-<div align="center">
+# Global Signals
 
-# 🌍 Sapien Signal
+Real-time global intelligence dashboard built with Next.js, TypeScript, validated API routes, caching, health checks, maps, charts, and CI.
 
-### _The Pulse of Human Civilization — In Real Time_
-
-**200+ free APIs · 15 interactive tabs · 3D WebGL Earth · Live data streams**
-
-[![Live Demo](https://img.shields.io/badge/▶_Live_Demo-Sapien_Signal-00d4ff?style=for-the-badge&logo=vercel&logoColor=white)](https://sapien-signal.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-sapien--signal.vercel.app-00d4ff?style=for-the-badge&logo=vercel&logoColor=white)](https://sapien-signal.vercel.app)
 [![CI](https://github.com/gauthambinoy/sapien-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/gauthambinoy/sapien-signal/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js_14-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://typescriptlang.org)
 
-</div>
+> Product rename in progress: the app is now positioned as **Global Signals**. The current deployment and repository URL still use the previous `sapien-signal` slug until the deployment/repository rename is completed.
 
----
+## Why this project exists
 
-## ✨ Features
+Public data is useful, but it is scattered across unreliable APIs, inconsistent response formats, rate limits, and separate dashboards. Global Signals brings those sources into one interface and normalizes the data through server-side API routes before it reaches the browser.
 
-### 🔴 40+ Real-Time Counters (Updated Every Second)
-- World population, births, deaths, CO₂ emissions, forest loss, energy consumption
-- Oil barrels consumed, solar energy generated, internet traffic, Google searches
-- Military/education/healthcare spending ticking in real-time
+The engineering goal is not just a visual dashboard. The project demonstrates API integration, runtime validation, caching, failure isolation, typed frontend components, charts/maps, CI, Docker, and clear documentation.
 
-### ⚡ Real-Time World Energy Consumption
-- Live energy consumption by source: fossil fuels, nuclear, renewables
-- Per-country energy data for top 10 consuming nations
-- Real-time kilowatt-hours ticking every second with animated numbers
-- Regional energy mix breakdowns with interactive charts
+## Product features
 
-### 📊 16 Interactive Data Tabs
-| Tab | Data Source | Refresh |
-|-----|-----------|---------|
-| 🌍 Overview | 40+ live counters | 1s |
-| 🌤 Weather | Open-Meteo (8 cities) | 5m |
-| 🌊 Earthquakes | USGS (M2.5+ world map) | 2m |
-| 💹 Markets | CoinGecko (top 20 crypto) | 1m |
-| 💱 Forex | Frankfurter/ECB (10 pairs) | 5m |
-| 📊 Economy | World Bank (6 indicators) | 24h |
-| 🏥 Health | disease.sh (COVID-19) | 1h |
-| 🗺 Countries | REST Countries (250 nations) | 24h |
-| 🚀 Space & ISS | NASA + Open Notify + NOAA | 5m |
-| 💨 Air Quality | OpenAQ (6 cities) | 10m |
-| ⚡ Tech Pulse | GitHub + Hacker News | 5m |
-| 🔋 Energy | IEA + EIA + IRENA (live) | 5m |
-| 📰 News | NewsAPI headlines | 15m |
-| 🔗 Data Sources | 200+ API catalog | static |
-| 🤖 AI Query | Pattern-match NLP | instant |
-| 🔧 System Health | 12 endpoint pings | live |
+- Real-time global overview counters for population, emissions, energy, internet activity, and economic indicators
+- Weather, earthquake, market, forex, country, health, space, air quality, energy, news, and technology tabs
+- 3D/WebGL Earth and map-based visualizations
+- System health panel for endpoint visibility
+- Command palette and keyboard navigation
+- Light/dark theme with responsive layout
+- Optional API keys for enhanced providers; core app still runs without paid services
 
-### 🛡 Production-Grade Architecture
-- **Circuit Breaker** pattern prevents cascading failures
-- **Zod validation** on every external API response
-- **SWR** with stale-while-revalidate and configurable polling
-- **Server-Sent Events** for real-time ISS tracking + population
-- **ISR caching** tuned per endpoint (60s → 24h)
-- **Error boundaries** per tab for fault isolation
-- **Content Security Policy** headers for XSS protection
+## Engineering highlights
 
-### 🎨 Beautiful UI
-- Dark/light mode with CSS variable theming
-- Framer Motion animations and transitions
-- Animated mesh gradient background
-- Command palette (⌘K) with fuzzy search
-- Keyboard navigation (arrow keys, number keys 1-9)
-- Responsive design with collapsible sidebar
+### API reliability layer
 
----
+- External services are called from Next.js API routes, not directly from the browser
+- Circuit breaker pattern isolates failing providers and avoids cascading UI failures
+- Endpoint-specific cache/revalidation windows reduce upstream API pressure
+- Health checks expose the status of external data dependencies
 
-## 🚀 Quick Start
+### Runtime validation
+
+- Zod schemas validate external API responses before data reaches UI components
+- Shared inferred TypeScript types keep server responses and frontend usage aligned
+- Fallback/default handling keeps optional fields explicit instead of relying on loose objects
+
+### Frontend architecture
+
+- App Router structure with dedicated tab components
+- SWR hooks manage stale-while-revalidate polling per data category
+- Recharts, maps, and WebGL views present complex data in a recruiter-friendly product UI
+- Error boundaries isolate individual tab failures
+
+### Delivery and maintainability
+
+- GitHub Actions runs lint, typecheck, tests, and production build
+- Dockerfile supports containerized deployment
+- `.env.example` documents optional external API keys
+- Architecture and API documentation live in `docs/`
+
+## Architecture
+
+```text
+Browser
+  |
+  |-- SWR hooks and dashboard components
+  |
+Next.js App Router
+  |
+  |-- Internal API routes (/api/*)
+  |-- Zod response validation
+  |-- Cache/revalidate policy
+  |-- Circuit breaker wrapper
+  |
+External public APIs
+  |
+  |-- Open-Meteo, USGS, CoinGecko, Frankfurter, World Bank
+  |-- REST Countries, NASA, OpenAQ, GitHub, Hacker News, NewsAPI
+```
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 14 App Router |
+| Language | TypeScript strict mode |
+| UI | React, Tailwind CSS, Framer Motion |
+| Data fetching | SWR, Server-Sent Events |
+| Validation | Zod |
+| Charts/maps | Recharts, react-simple-maps, Leaflet, WebGL globe |
+| Testing | Vitest, React Testing Library |
+| Delivery | GitHub Actions, Docker, Vercel |
+
+## Local development
 
 ```bash
-# Clone the repository
 git clone https://github.com/gauthambinoy/sapien-signal.git
 cd sapien-signal
-
-# Install dependencies
 npm install
-
-# (Optional) Set up environment variables
 cp .env.example .env.local
-# Edit .env.local with your API keys (app works without them)
-
-# Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — the dashboard loads instantly with live data.
+Open [http://localhost:3000](http://localhost:3000).
 
----
-
-## 🏗 Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| **Framework** | Next.js 14 (App Router) |
-| **Language** | TypeScript 5.9 (strict mode) |
-| **Styling** | Tailwind CSS 3.4 + CSS variables |
-| **Charts** | Recharts 3.8 |
-| **Animations** | Framer Motion 12 |
-| **Data Fetching** | SWR 2.4 + Server-Sent Events |
-| **Validation** | Zod 4.3 (runtime schemas) |
-| **Maps** | react-simple-maps 3.0 |
-| **Testing** | Vitest 1.6 + React Testing Library |
-| **CI/CD** | GitHub Actions |
-| **Container** | Docker (multi-stage Alpine) |
-
----
-
-## 📂 Project Structure
-
-```
-sapien-signal/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout + metadata
-│   ├── page.tsx            # Home (Dashboard)
-│   ├── globals.css         # Theme + animations
-│   └── api/                # 18 API routes
-├── components/
-│   ├── Dashboard.tsx       # Main container + tab routing
-│   ├── Header.tsx          # Live population counter
-│   ├── Sidebar.tsx         # Navigation + API status
-│   ├── tabs/               # 16 tab components
-│   └── ui/                 # 12 reusable UI components
-├── hooks/                  # 7 custom React hooks
-├── lib/                    # Utilities, types, schemas
-├── tests/                  # Vitest unit tests
-├── docs/                   # Architecture + API docs
-└── Dockerfile              # Production container
-```
-
----
-
-## 🌐 Data Sources
-
-This dashboard integrates **200+ public APIs** across 20 categories. Key sources include:
-
-| API | Data | Free Tier |
-|-----|------|-----------|
-| [Open-Meteo](https://open-meteo.com) | Weather forecasts | ✅ Unlimited |
-| [USGS](https://earthquake.usgs.gov) | Earthquake data | ✅ Unlimited |
-| [CoinGecko](https://coingecko.com) | Crypto markets | ✅ 30/min |
-| [Frankfurter](https://frankfurter.app) | Forex rates (ECB) | ✅ Unlimited |
-| [World Bank](https://data.worldbank.org) | Economic indicators | ✅ Unlimited |
-| [disease.sh](https://disease.sh) | COVID-19 stats | ✅ Unlimited |
-| [REST Countries](https://restcountries.com) | 250 nations | ✅ Unlimited |
-| [NASA](https://api.nasa.gov) | APOD, NEO, solar | ✅ 1000/hr |
-| [Open Notify](http://open-notify.org) | ISS position | ✅ Unlimited |
-| [OpenAQ](https://openaq.org) | Air quality | ✅ Unlimited |
-| [IEA](https://www.iea.org) | Energy statistics | ✅ Reference |
-| [EIA](https://www.eia.gov) | US energy data | ✅ Unlimited |
-| [IRENA](https://www.irena.org) | Renewable energy | ✅ Reference |
-
-See the **Data Sources** tab in the app for the full catalog of 200+ APIs.
-
----
-
-## 🧪 Testing
+## Production checks
 
 ```bash
-npm run test              # Run all tests
-npm run test:watch        # Watch mode
-npm run test:coverage     # Coverage report
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+
+# or run everything
+npm run check
 ```
 
----
-
-## 🐳 Docker
+## Docker
 
 ```bash
-docker build -t sapien-signal .
-docker run -p 3000:3000 sapien-signal
+docker build -t global-signals-dashboard .
+docker run -p 3000:3000 global-signals-dashboard
 ```
 
----
+## Environment variables
 
-## 📖 Documentation
+```env
+NEXT_PUBLIC_CESIUM_ION_TOKEN=
+NASA_API_KEY=
+NEWS_API_KEY=
+NEXT_PUBLIC_APP_NAME=Global Signals
+```
 
-- [Architecture Guide](docs/ARCHITECTURE.md) — System design, patterns, caching strategy
-- [API Reference](docs/API.md) — All 18 endpoints with request/response shapes
-- [Contributing Guide](CONTRIBUTING.md) — Development setup, code standards, PR process
+The app works without paid API keys. Optional keys unlock richer NASA, news, and globe-related data.
 
----
+## Documentation
 
-## 📄 License
+- [Architecture Guide](docs/ARCHITECTURE.md)
+- [API Reference](docs/API.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
+## Next production-readiness improvements
+
+- Add screenshots/GIFs under `docs/screenshots/`
+- Add Playwright end-to-end tests for navigation, health page, API fallback UI, and mobile layout
+- Add Lighthouse report and bundle analysis notes
+- Rename the GitHub repository and Vercel deployment from `sapien-signal` to `global-signals-dashboard`
+- Add a short case-study section with measurable performance and reliability outcomes
+
+## License
 
 MIT © 2026 [Gautham Binoy](https://github.com/gauthambinoy)
-
----
-
-<div align="center">
-
-_"Every signal tells a story. This dashboard tells them all."_
-
-**Built with obsession by [Gautham Binoy](https://github.com/gauthambinoy)**
-
-</div>
