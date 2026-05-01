@@ -109,20 +109,17 @@ function DashboardInner() {
   if (!themeMounted) return <SkeletonLoader height={600} message="Loading..." />;
 
   return (
-    <div className="relative flex min-h-screen" style={{ background: "#030810", color: "var(--text-primary)" }}>
-      {/* Fixed NASA deep-space background — visible everywhere */}
+    <div className="relative flex min-h-screen" style={{ background: "var(--depth-gradient)", color: "var(--text-primary)" }}>
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          backgroundImage: "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          opacity: 0.32,
+          background:
+            "radial-gradient(ellipse 900px 420px at 78% -10%, rgba(217,119,87,0.12), transparent 62%), radial-gradient(ellipse 720px 420px at 12% 0%, rgba(217,182,121,0.07), transparent 64%), #1B1A18",
         }}
       />
-      <div className="pointer-events-none fixed inset-0 z-0" style={{ background: "radial-gradient(ellipse 90% 80% at 50% 40%, transparent 0%, #030810 75%)" }} />
-      <div style={{ opacity: tab === "overview" ? 0.22 : 0.55 }}>
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-[0.18]" style={{ backgroundImage: "radial-gradient(rgba(245,240,232,0.08) 1px, transparent 1px)", backgroundSize: "4px 4px" }} />
+      <div className="pointer-events-none fixed inset-0 z-0" style={{ background: "linear-gradient(180deg, rgba(27,26,24,0.12), rgba(27,26,24,0.9) 78%)" }} />
+      <div style={{ opacity: tab === "overview" ? 0.08 : 0.16 }}>
         <MeshBackground />
       </div>
 
@@ -139,15 +136,14 @@ function DashboardInner() {
       />
 
       <main className="relative z-10 flex-1 overflow-hidden">
-        {/* Premium floating header with ambient light */}
         <div
-          className="flex h-16 items-center justify-between border-b px-8"
+          className="flex min-h-20 items-center justify-between border-b px-6 py-4 md:px-8"
           style={{
-            borderColor: "rgba(255,255,255,0.06)",
-            background: "rgba(10, 15, 26, 0.7)",
+            borderColor: "var(--border)",
+            background: "linear-gradient(180deg, rgba(33,31,28,0.92) 0%, rgba(33,31,28,0.72) 100%)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
-            boxShadow: `0 4px 24px rgba(0,0,0,0.2), inset 0 -1px 0 rgba(255,255,255,0.03), 0 0 40px ${ambient.accentGlow}`,
+            boxShadow: `0 1px 0 rgba(255,255,255,0.035) inset, 0 12px 36px rgba(0,0,0,0.24), 0 0 40px ${ambient.accentGlow}`,
           }}
         >
           <div className="flex items-center gap-4">
@@ -156,8 +152,8 @@ function DashboardInner() {
               className="flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 hover:scale-105"
               style={{
                 color: "var(--text-secondary)",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
               }}
             >
               <svg className="h-4.5 w-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -165,8 +161,11 @@ function DashboardInner() {
               </svg>
             </button>
             <div>
-              <h2 className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>{tabLabel}</h2>
-              <div className="flex items-center gap-2 text-[9px]" style={{ color: "var(--text-muted)" }}>
+              <div className="mb-1 font-mono text-[9px] font-bold uppercase tracking-[0.28em]" style={{ color: "var(--accent)" }}>
+                Orbital Command
+              </div>
+              <h2 className="font-serif text-2xl font-semibold leading-none tracking-tight" style={{ color: "var(--text-primary)" }}>{tabLabel}</h2>
+              <div className="mt-1 flex items-center gap-2 text-[10px]" style={{ color: "var(--text-muted)" }}>
                 <div className="h-1 w-1 rounded-full" style={{ background: ambient.accent, boxShadow: `0 0 6px ${ambient.accent}` }} />
                 <span className="capitalize">{ambient.phase} mode</span>
               </div>
@@ -178,8 +177,8 @@ function DashboardInner() {
             <button
               className="flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-300 hover:scale-105"
               style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.06)",
+                background: "var(--bg-card)",
+                border: "1px solid var(--border)",
                 color: "var(--text-secondary)",
               }}
               title="AI Chat (⌘J)"
@@ -192,9 +191,9 @@ function DashboardInner() {
               onClick={() => { window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true })); }}
               className="flex items-center gap-2 rounded-xl border px-4 py-2 text-sm transition-all duration-300 hover:scale-[1.02]"
               style={{
-                borderColor: "rgba(255,255,255,0.08)",
+                borderColor: "var(--border)",
                 color: "var(--text-secondary)",
-                background: "rgba(255,255,255,0.04)",
+                background: "var(--bg-card)",
                 backdropFilter: "blur(12px)",
               }}
             >
@@ -212,8 +211,7 @@ function DashboardInner() {
           </div>
         </div>
 
-        {/* Content with liquid glass transitions */}
-        <div className="h-[calc(100vh-64px)] overflow-y-auto px-8 py-6" style={{ background: "transparent" }}>
+        <div className="h-[calc(100vh-80px)] overflow-y-auto px-4 py-5 md:px-8 md:py-7" style={{ background: "transparent" }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={tab}
@@ -230,7 +228,7 @@ function DashboardInner() {
 
           <footer
             className="mt-10 border-t pb-6 pt-4 text-center text-[11px]"
-            style={{ borderColor: "rgba(255,255,255,0.04)", color: "var(--text-muted)" }}
+            style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}
           >
             <span className="text-aurora">Global Signal</span> — Built with Next.js 14 · TypeScript · TailwindCSS · 200+ APIs · AI Intelligence
           </footer>

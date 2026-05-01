@@ -1,6 +1,6 @@
 # Global Signal
 
-Real-time global intelligence dashboard built with Next.js, TypeScript, validated API routes, caching, health checks, maps, charts, and CI.
+A recruiter-ready real-time global intelligence dashboard built with Next.js, TypeScript, validated API routes, caching, health checks, maps, charts, and CI.
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-global--signal.vercel.app-00d4ff?style=for-the-badge&logo=vercel&logoColor=white)](https://global-signal.vercel.app)
 [![CI](https://github.com/gauthambinoy/global-signal/actions/workflows/ci.yml/badge.svg)](https://github.com/gauthambinoy/global-signal/actions/workflows/ci.yml)
@@ -15,6 +15,22 @@ Public data is useful, but it is scattered across unreliable APIs, inconsistent 
 
 The engineering goal is not just a visual dashboard. The project demonstrates API integration, runtime validation, caching, failure isolation, typed frontend components, charts/maps, CI, Docker, and clear documentation.
 
+## Demo
+
+- **Live app:** https://global-signal.vercel.app
+- **Primary route:** `/` renders the Next.js App Router application. It must not depend on uncommitted static design files.
+- **Deep links:** `/?tab=system`, `/?tab=weather`, `/?tab=markets`, `/?tab=space`
+- **Health endpoint:** `/api/health-check` returns live dependency status for deployment smoke tests.
+- **Screenshots to add before pinning:** hero, dashboard overview, 3D Earth/space, system health, and mobile layout. Store them in `public/screenshots/` and embed them below.
+
+| Area | What to capture |
+|---|---|
+| Hero | Globe, value proposition, CTA |
+| Overview | Live global counters and charts |
+| Space/ISS | 3D Earth and orbital data |
+| System Health | API uptime and latency panel |
+| Mobile | Responsive sidebar and tab UI |
+
 ## Product features
 
 - Real-time global overview counters for population, emissions, energy, internet activity, and economic indicators
@@ -24,6 +40,7 @@ The engineering goal is not just a visual dashboard. The project demonstrates AP
 - Command palette and keyboard navigation
 - Light/dark theme with responsive layout
 - Optional API keys for enhanced providers; core app still runs without paid services
+- Health-check endpoint suitable for smoke tests and deployment monitoring
 
 ## Engineering highlights
 
@@ -89,6 +106,8 @@ External public APIs
 
 ## Local development
 
+Prerequisites: Node.js 20+ and npm 10+.
+
 ```bash
 git clone https://github.com/gauthambinoy/global-signal.git
 cd global-signal
@@ -101,6 +120,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Production checks
 
+Run the same checks locally that CI runs on every push and pull request.
+
 ```bash
 npm run lint
 npm run typecheck
@@ -111,6 +132,25 @@ npm run build
 npm run check
 ```
 
+## Free Vercel deployment
+
+The app uses server-side Next.js API routes, so deploy it as a Next.js app, not as a static export. A root `vercel.json` pins the framework/build commands so Vercel does not guess the wrong output.
+
+1. Push this repository to GitHub.
+2. In Vercel, import `gauthambinoy/global-signal`.
+3. Set **Framework Preset** to **Next.js**.
+4. Set **Root Directory** to `.` / repository root. Do not point Vercel at `public/` or a design subfolder.
+5. Build command: `npm run build`; install command: `npm ci`.
+6. Add optional environment variables from `.env.example` (`NASA_API_KEY`, `NEWS_API_KEY`, `NEXT_PUBLIC_CESIUM_ION_TOKEN`). The app still runs without paid keys.
+7. Deploy, then verify:
+
+```bash
+curl -I https://global-signal.vercel.app/
+curl https://global-signal.vercel.app/api/health-check
+```
+
+If the live URL returns `404` with `x-vercel-error: DEPLOYMENT_NOT_FOUND`, the domain is not attached to an active Vercel deployment. Create/reconnect the Vercel project, name it `global-signal` if that slug is available, and redeploy from the repository root. If the slug is unavailable, use the generated Vercel URL and update the live-demo badge plus `metadataBase` in `app/layout.tsx`.
+
 ## Docker
 
 ```bash
@@ -119,6 +159,8 @@ docker run -p 3000:3000 global-signal
 ```
 
 ## Environment variables
+
+Copy `.env.example` to `.env.local` for local development. Do not commit `.env.local` or real API keys.
 
 ```env
 NEXT_PUBLIC_CESIUM_ION_TOKEN=
@@ -129,6 +171,10 @@ NEXT_PUBLIC_APP_NAME=Global Signal
 
 The app works without paid API keys. Optional keys unlock richer NASA, news, and globe-related data.
 
+## API health page
+
+Open the **System Health** tab (`/?tab=system`) or call `/api/health-check` to inspect upstream API availability, latency, and degraded/unhealthy states. This is the fastest production smoke test after each deploy.
+
 ## Documentation
 
 - [Architecture Guide](docs/ARCHITECTURE.md)
@@ -137,7 +183,7 @@ The app works without paid API keys. Optional keys unlock richer NASA, news, and
 
 ## Next production-readiness improvements
 
-- Add screenshots/GIFs under `docs/screenshots/`
+- Add real screenshots/GIFs under `public/screenshots/` and embed them in the Demo section
 - Add Playwright end-to-end tests for navigation, health page, API fallback UI, and mobile layout
 - Add Lighthouse report and bundle analysis notes
 - Add a short case-study section with measurable performance and reliability outcomes

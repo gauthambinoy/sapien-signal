@@ -174,7 +174,7 @@ export default function AIChatSidebar() {
                     <span className="text-lg">🧠</span>
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-aurora">Sapien AI</div>
+                    <div className="text-sm font-bold text-aurora">Global Signal AI</div>
                     <div className="flex items-center gap-1.5 text-[10px]" style={{ color: "rgba(201, 100, 66,0.7)" }}>
                       <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" style={{ boxShadow: "0 0 6px rgba(52,211,153,0.6)" }} />
                       Online · Analyzing data
@@ -266,7 +266,7 @@ export default function AIChatSidebar() {
                     ref={inputRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask Sapien AI anything..."
+                    placeholder="Ask Global Signal AI anything..."
                     className="flex-1 bg-transparent text-sm focus:outline-none"
                     style={{ color: "#f1f5f9" }}
                   />

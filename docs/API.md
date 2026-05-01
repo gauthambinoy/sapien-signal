@@ -402,7 +402,7 @@ The stream closes itself after 290 seconds. The client (`hooks/useLiveStream.ts`
 
 ## `GET /api/health-check`
 
-Pings all 12 external API endpoints and returns latency and status for each.
+Pings external API endpoints and returns latency and status for each. This route powers the **System Health** dashboard tab and is the recommended production smoke test after deploying to Vercel.
 
 **Cache:** `force-dynamic` (never cached)  
 **Timeout per endpoint:** 8 seconds
@@ -432,6 +432,14 @@ Pings all 12 external API endpoints and returns latency and status for each.
 - `"healthy"` — all endpoints up
 - `"degraded"` — 70–99% up
 - `"unhealthy"` — fewer than 70% up
+
+**Recruiter/demo usage:**
+
+```bash
+curl https://global-signal.vercel.app/api/health-check
+```
+
+The route intentionally returns dependency health, not application uptime only. A `degraded` status can be acceptable when non-critical public APIs are rate-limited; critical failures should be investigated before sharing the live demo.
 
 ---
 

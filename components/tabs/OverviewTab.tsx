@@ -28,15 +28,15 @@ function GlassPanel({ children, className = "", glow }: { children: React.ReactN
     <div
       className={`relative overflow-hidden rounded-2xl border ${className}`}
       style={{
-        background: "rgba(10,15,30,0.55)",
-        backdropFilter: "blur(20px) saturate(1.4)",
-        borderColor: "rgba(255,255,255,0.06)",
+        background: "var(--bg-card)",
+        backdropFilter: "blur(18px) saturate(1.2)",
+        borderColor: "var(--border)",
         boxShadow: glow
-          ? `0 0 30px ${glow}, inset 0 1px 0 rgba(255,255,255,0.04)`
-          : "0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.04)",
+          ? `0 0 30px ${glow}, var(--shadow-sm)`
+          : "var(--shadow-sm)",
       }}
     >
-      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 50%, transparent)" }} />
+      <div className="pointer-events-none absolute left-0 right-0 top-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(245,240,232,0.10) 50%, transparent)" }} />
       {children}
     </div>
   );
@@ -50,7 +50,7 @@ function SectionHead({ icon, title, sub }: { icon: string; title: string; sub?: 
         <span className="text-base">{icon}</span>
       </div>
       <div>
-        <h3 className="text-sm font-bold uppercase tracking-wider text-white/90">{title}</h3>
+        <h3 className="font-serif text-lg font-semibold tracking-tight" style={{ color: "var(--text-primary)" }}>{title}</h3>
         {sub && <p className="text-[11px] text-white/30">{sub}</p>}
       </div>
     </div>
@@ -119,50 +119,50 @@ export default function OverviewTab() {
   return (
     <div className="space-y-6">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-        <div
-          className="relative overflow-hidden rounded-[28px] border"
-          style={{
-            background: "rgba(7,12,24,0.72)",
-            borderColor: "rgba(255,255,255,0.08)",
-            boxShadow: "0 25px 80px rgba(0,0,0,0.34)",
-          }}
-        >
           <div
-            className="absolute inset-0"
+            className="relative overflow-hidden rounded-[28px] border"
             style={{
-              backgroundImage: "url(https://eoimages.gsfc.nasa.gov/images/imagerecords/79000/79765/dnb_land_ocean_ice.2012.3600x1800.jpg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              opacity: 0.32,
+              background: "linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%)",
+              borderColor: "var(--border)",
+              boxShadow: "var(--shadow-lg)",
             }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(circle at 72% 26%, rgba(217, 165, 116,0.18) 0%, transparent 22%), linear-gradient(120deg, rgba(2,6,23,0.16) 0%, rgba(2,6,23,0.72) 48%, rgba(2,6,23,0.94) 100%)",
-            }}
-          />
+          >
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: "url(https://eoimages.gsfc.nasa.gov/images/imagerecords/79000/79765/dnb_land_ocean_ice.2012.3600x1800.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.18,
+              }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(circle at 78% 24%, rgba(217,119,87,0.18) 0%, transparent 28%), linear-gradient(120deg, rgba(27,26,24,0.02) 0%, rgba(27,26,24,0.58) 48%, rgba(27,26,24,0.90) 100%)",
+              }}
+            />
 
           <div className="relative grid gap-6 p-6 lg:grid-cols-[1.08fr_0.92fr] lg:p-8">
             <div>
               <div className="mb-4 flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[10px] font-bold tracking-[0.22em]" style={{ background: "rgba(201, 100, 66,0.08)", border: "1px solid rgba(201, 100, 66,0.16)", color: "#C96442" }}>
+                  <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[10px] font-bold tracking-[0.22em]" style={{ background: "rgba(217,119,87,0.10)", border: "1px solid rgba(217,119,87,0.22)", color: "#D97757" }}>
                   <span className="relative flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
                   </span>
                   ORBITAL COMMAND VIEW
                 </div>
-                <span className="text-xs text-white/45">Last sync {lastUpdate || "--:--:--"}</span>
+                <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>Last sync {lastUpdate || "--:--:--"}</span>
               </div>
 
-              <h2 className="max-w-3xl text-3xl font-black leading-tight text-white md:text-5xl">
-                Satellite-first dashboard with the map and planetary feeds above the fold.
+              <h2 className="max-w-3xl font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-[#F5F0E8] md:text-6xl">
+                The state of the planet, <em className="font-medium italic" style={{ color: "#D97757" }}>right now</em>.
               </h2>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/58 md:text-base">
-                Live monitoring across weather, quakes, energy, space and markets, re-framed as a darker orbital control room so the dashboard no longer feels like the older glass-card layout.
+              <p className="mt-5 max-w-2xl font-serif text-sm leading-7 text-[#D9D3C4]/80 md:text-base">
+                Live monitoring across weather, quakes, energy, space and markets, presented as the refined cocoa command interface from the latest Global Signal design.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">
@@ -174,8 +174,8 @@ export default function OverviewTab() {
                 ].map((chip) => (
                   <span
                     key={chip}
-                    className="rounded-full px-3 py-1.5 text-[11px] font-semibold text-white/70"
-                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.06)" }}
+                    className="rounded-full px-3 py-1.5 text-[11px] font-semibold"
+                    style={{ background: "rgba(245,240,232,0.045)", border: "1px solid var(--border)", color: "var(--text-secondary)" }}
                   >
                     {chip}
                   </span>
@@ -199,13 +199,13 @@ export default function OverviewTab() {
                     backdropFilter: "blur(20px)",
                   }}
                 >
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/38">{item.label}</div>
-                  <div className="mt-3 font-mono text-2xl font-black leading-none" style={{ color: item.color, textShadow: `0 0 22px ${item.color}33` }}>
-                    {item.value}
+                    <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: "var(--text-muted)" }}>{item.label}</div>
+                    <div className="mt-3 font-mono text-2xl font-black leading-none" style={{ color: item.color, textShadow: `0 0 22px ${item.color}33` }}>
+                      {item.value}
+                    </div>
+                    <div className="mt-2 text-[11px]" style={{ color: "var(--text-muted)" }}>{item.sub}</div>
                   </div>
-                  <div className="mt-2 text-[11px] text-white/28">{item.sub}</div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>

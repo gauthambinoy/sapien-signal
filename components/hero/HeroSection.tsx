@@ -11,10 +11,10 @@ interface HeroSectionProps {
 }
 
 const STATS = [
-  { label: "Live APIs", value: "200+", icon: "⚡" },
-  { label: "Planetary Feeds", value: "80+", icon: "🛰️" },
-  { label: "Countries", value: "195", icon: "🌍" },
-  { label: "Updates / min", value: "500+", icon: "🔄" },
+  { label: "Live APIs", value: "200+", icon: "▦" },
+  { label: "Planetary Feeds", value: "80+", icon: "◉" },
+  { label: "Countries", value: "195", icon: "⌖" },
+  { label: "Updates / min", value: "500+", icon: "↻" },
 ];
 
 const FEATURES = [
@@ -39,21 +39,20 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
   }, []);
 
   return (
-    <div className="hero-container overflow-hidden" style={{ background: "#02050b" }}>
+    <div className="hero-container overflow-hidden" style={{ background: "#1B1A18" }}>
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=2200&q=80)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.42,
+          background:
+            "radial-gradient(ellipse 900px 520px at 76% 16%, rgba(217,119,87,0.16), transparent 58%), radial-gradient(ellipse 620px 360px at 12% 8%, rgba(217,182,121,0.08), transparent 66%), linear-gradient(180deg, #211F1C 0%, #1B1A18 100%)",
         }}
       />
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background:
-            "radial-gradient(circle at 72% 40%, rgba(8,145,178,0.2) 0%, transparent 24%), radial-gradient(circle at 22% 24%, rgba(184, 168, 138,0.15) 0%, transparent 20%), linear-gradient(180deg, rgba(2,6,23,0.38) 0%, rgba(2,6,23,0.74) 42%, rgba(2,6,23,0.96) 100%)",
+          backgroundImage: "radial-gradient(rgba(245,240,232,0.06) 1px, transparent 1px)",
+          backgroundSize: "4px 4px",
+          opacity: 0.28,
         }}
       />
 
@@ -61,13 +60,14 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
         <div className="flex items-center gap-3">
           <div
             className="flex h-10 w-10 items-center justify-center rounded-xl"
-            style={{ background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))", border: "1px solid rgba(201, 100, 66,0.2)" }}
+            style={{ background: "radial-gradient(circle at 30% 30%, #E89070, #C96442)", border: "1px solid rgba(245,240,232,0.16)", boxShadow: "0 8px 24px rgba(217,119,87,0.24), inset 0 1px 0 rgba(255,255,255,0.25)" }}
           >
-            <span className="text-lg">🌍</span>
+            <span className="text-lg text-[#1B1A18]">◉</span>
           </div>
-          <span className="text-base font-bold tracking-wider text-white">
-            <span style={{ color: "#C96442" }}>SAPIEN</span> SIGNAL
-          </span>
+          <div>
+            <span className="font-serif text-lg font-semibold tracking-tight text-[#F5F0E8]">Global Signal</span>
+            <div className="font-mono text-[9px] uppercase tracking-[0.22em] text-[#6E6A62]">Orbital Intel</div>
+          </div>
         </div>
 
         <div className="flex items-center gap-2">
@@ -78,9 +78,10 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
             onClick={onEnter}
             className="rounded-xl px-5 py-2.5 text-xs font-bold tracking-wider text-white transition-all hover:scale-105"
             style={{
-              background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
-              border: "1px solid rgba(201, 100, 66,0.25)",
+              background: "linear-gradient(180deg, #E89070 0%, #C96442 100%)",
+              border: "1px solid rgba(245,240,232,0.14)",
               backdropFilter: "blur(10px)",
+              boxShadow: "0 10px 28px rgba(217,119,87,0.22), inset 0 1px 0 rgba(255,255,255,0.25)",
             }}
           >
             GET STARTED
@@ -125,21 +126,20 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
           >
             <div
               className="mb-5 inline-flex rounded-full px-4 py-2 text-[11px] font-bold tracking-[0.26em]"
-              style={{ background: "rgba(201, 100, 66,0.08)", border: "1px solid rgba(201, 100, 66,0.16)", color: "#C96442" }}
+              style={{ background: "rgba(217,119,87,0.10)", border: "1px solid rgba(217,119,87,0.22)", color: "#D97757" }}
             >
               REAL EARTH / LIVE CIVILIZATION
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-black leading-[0.95] text-white md:text-7xl">
-              A{" "}
-              <span style={{ color: "#bae6fd", textShadow: "0 0 35px rgba(56,189,248,0.22)" }}>
-                real Earth
-              </span>{" "}
-              view of a living planet.
+            <h1 className="max-w-3xl font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-[#F5F0E8] md:text-7xl">
+              The state of the planet,{" "}
+              <em className="font-serif font-medium italic" style={{ color: "#D97757", textShadow: "0 0 35px rgba(217,119,87,0.18)" }}>
+                right now
+              </em>.
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/58 md:text-lg">
-              Orbital-grade monitoring across energy, weather, quakes, markets, health and space, with a landing view built around real Earth imagery instead of a stylized synthetic globe.
+            <p className="mt-5 max-w-2xl font-serif text-base leading-8 text-[#D9D3C4]/80 md:text-lg">
+              One stream for weather, seismic, energy, markets, public health, space and the conversation around it - normalized into a warm orbital command center.
             </p>
 
             <div className="mt-5 h-6">
@@ -147,7 +147,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
                 <motion.span
                   key={featureIdx}
                   className="inline-block text-sm font-semibold tracking-[0.18em]"
-                  style={{ color: "rgba(125,211,252,0.86)" }}
+                  style={{ color: "rgba(217,182,121,0.92)" }}
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
@@ -163,9 +163,9 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
                 onClick={onEnter}
                 className="group flex items-center gap-2 rounded-2xl px-8 py-4 text-sm font-bold tracking-wider text-white transition-all duration-300 hover:scale-105"
                 style={{
-                  background: "linear-gradient(135deg, rgba(201, 100, 66,0.2), rgba(217, 165, 116,0.14))",
-                  border: "1px solid rgba(201, 100, 66,0.3)",
-                  boxShadow: "0 0 30px rgba(201, 100, 66,0.12), 0 10px 40px rgba(0,0,0,0.35)",
+                  background: "linear-gradient(180deg, #E89070 0%, #C96442 100%)",
+                  border: "1px solid rgba(245,240,232,0.16)",
+                  boxShadow: "0 12px 36px rgba(217,119,87,0.24), 0 10px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25)",
                   backdropFilter: "blur(10px)",
                 }}
               >
@@ -200,8 +200,8 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
                   }}
                 >
                   <div className="text-lg">{stat.icon}</div>
-                  <div className="mt-2 text-xl font-black text-white">{stat.value}</div>
-                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/32">{stat.label}</div>
+                  <div className="mt-2 font-mono text-xl font-black text-[#F5F0E8]">{stat.value}</div>
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6E6A62]">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -223,7 +223,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
               className="absolute bottom-10 right-0 rounded-2xl px-4 py-3"
               style={{ background: "rgba(5,10,20,0.72)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(18px)" }}
             >
-              <div className="text-[10px] font-bold tracking-[0.24em] text-cyan-200/80">CURRENT FOCUS</div>
+              <div className="text-[10px] font-bold tracking-[0.24em] text-[#D9B679]">CURRENT FOCUS</div>
               <div className="mt-1 text-sm font-semibold text-white/90">Weather, energy, quakes, markets</div>
               <div className="mt-1 text-xs text-white/45">Satellite-first planetary dashboard</div>
             </div>
@@ -234,7 +234,7 @@ export default function HeroSection({ onEnter }: HeroSectionProps) {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[5] h-24" style={{ background: "linear-gradient(to top, #02050b, transparent)" }} />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-[5] h-24" style={{ background: "linear-gradient(to top, #1B1A18, transparent)" }} />
     </div>
   );
 }

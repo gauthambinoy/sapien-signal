@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Suspense } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
 import SkeletonLoader from "@/components/ui/SkeletonLoader";
@@ -14,7 +14,6 @@ function HomeInner() {
   const searchParams = useSearchParams();
   const [showDashboard, setShowDashboard] = useState(false);
 
-  // If ?tab= query param exists, go straight to dashboard
   useEffect(() => {
     if (searchParams.get("tab")) {
       setShowDashboard(true);
@@ -22,11 +21,7 @@ function HomeInner() {
   }, [searchParams]);
 
   if (showDashboard) {
-    return (
-      <Suspense fallback={<SkeletonLoader height={600} message="Loading dashboard..." />}>
-        <Dashboard />
-      </Suspense>
-    );
+    return <Dashboard />;
   }
 
   return <HeroSection onEnter={() => setShowDashboard(true)} />;

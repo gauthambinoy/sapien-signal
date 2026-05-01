@@ -17,14 +17,12 @@ interface SidebarProps {
 }
 
 const TAB_GROUPS = [
-  { label: "Dashboard", tabs: ["overview"] as TabId[] },
-  { label: "Global Data", tabs: ["weather", "quakes", "air"] as TabId[] },
-  { label: "Finance", tabs: ["markets", "forex", "economy"] as TabId[] },
-  { label: "Energy & Climate", tabs: ["energy"] as TabId[] },
-  { label: "Society", tabs: ["health", "countries"] as TabId[] },
-  { label: "Science & Tech", tabs: ["space", "tech"] as TabId[] },
-  { label: "Information", tabs: ["news", "datasources"] as TabId[] },
-  { label: "Tools", tabs: ["ai", "system"] as TabId[] },
+  { label: "Command", tabs: ["overview"] as TabId[] },
+  { label: "Earth Systems", tabs: ["weather", "quakes", "air", "energy"] as TabId[] },
+  { label: "Economy", tabs: ["markets", "forex", "economy", "countries"] as TabId[] },
+  { label: "Society", tabs: ["health", "space", "tech", "news"] as TabId[] },
+  { label: "Intelligence", tabs: ["ai"] as TabId[] },
+  { label: "System", tabs: ["datasources", "system"] as TabId[] },
 ];
 
 const API_ENDPOINTS = [
@@ -87,33 +85,37 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
           isOpen ? "w-[280px]" : "w-0 overflow-hidden lg:w-[68px]"
         }`}
         style={{
-          background: "rgba(10, 15, 26, 0.85)",
+          background: "linear-gradient(180deg, rgba(33,31,28,0.98) 0%, rgba(27,26,24,0.98) 100%)",
           backdropFilter: "blur(24px)",
           WebkitBackdropFilter: "blur(24px)",
-          borderColor: "rgba(255,255,255,0.06)",
-          boxShadow: "4px 0 30px rgba(0,0,0,0.3), inset -1px 0 0 rgba(255,255,255,0.03)",
+          borderColor: "var(--border)",
+          boxShadow: "8px 0 42px rgba(0,0,0,0.34), inset -1px 0 0 rgba(245,240,232,0.035)",
         }}
       >
+        <div className="pointer-events-none absolute left-0 right-0 top-0 h-48" style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(217,119,87,0.10), transparent 72%)" }} />
         {/* Logo */}
         <div
-          className="flex h-16 shrink-0 items-center gap-3 border-b px-5"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          className="relative flex h-20 shrink-0 items-center gap-3 border-b px-5"
+          style={{ borderColor: "var(--border)" }}
         >
           {isOpen ? (
             <>
               <div
-                className="flex h-10 w-10 items-center justify-center rounded-xl glow-pulse"
+                className="relative flex h-10 w-10 items-center justify-center rounded-xl glow-pulse"
                 style={{
-                  background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
-                  border: "1px solid rgba(201, 100, 66,0.2)",
+                  background: "radial-gradient(circle at 30% 30%, #E89070, #C96442)",
+                  border: "1px solid rgba(245,240,232,0.16)",
+                  boxShadow: "0 8px 24px rgba(217,119,87,0.24), inset 0 1px 0 rgba(255,255,255,0.25)",
                 }}
               >
-                <span className="text-xl">🌍</span>
+                <span className="text-lg text-[#1B1A18]">◉</span>
               </div>
               <div>
-                <div className="text-base font-bold tracking-tight">
-                  <span className="text-aurora">Sapien</span>{" "}
-                  <span style={{ color: "var(--text-primary)" }}>Signal</span>
+                <div className="font-serif text-lg font-semibold tracking-tight">
+                  <span style={{ color: "var(--text-primary)" }}>Global Signal</span>
+                </div>
+                <div className="mt-1 font-mono text-[9px] uppercase tracking-[0.22em]" style={{ color: "var(--text-muted)" }}>
+                  Orbital Intel · v2
                 </div>
               </div>
             </>
@@ -121,18 +123,18 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
             <div
               className="mx-auto flex h-10 w-10 items-center justify-center rounded-xl"
               style={{
-                background: "linear-gradient(135deg, rgba(201, 100, 66,0.15), rgba(217, 165, 116,0.1))",
-                border: "1px solid rgba(201, 100, 66,0.2)",
+                background: "radial-gradient(circle at 30% 30%, #E89070, #C96442)",
+                border: "1px solid rgba(245,240,232,0.16)",
               }}
             >
-              <span className="text-xl">🌍</span>
+              <span className="text-lg text-[#1B1A18]">◉</span>
             </div>
           )}
         </div>
 
         {/* Live stats */}
         {isOpen && mounted && (
-          <div className="shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
+          <div className="relative shrink-0 border-b px-4 py-3" style={{ borderColor: "var(--border)" }}>
             <div className="mb-2 flex items-center gap-2">
               <LiveBadge />
               <span className="font-mono text-[10px] tabular-nums" style={{ color: "var(--text-tertiary)" }}>
@@ -145,14 +147,31 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
           </div>
         )}
 
+        {isOpen && (
+          <div className="relative px-4 py-3">
+            <button
+              onClick={() => window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", metaKey: true }))}
+              className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-xs transition hover:scale-[1.01]"
+              style={{ background: "var(--bg-card)", border: "1px solid var(--border)", color: "var(--text-tertiary)" }}
+            >
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="11" cy="11" r="7" strokeWidth={2} />
+                <path d="M21 21l-5-5" strokeWidth={2} strokeLinecap="round" />
+              </svg>
+              <span className="flex-1">Search the planet...</span>
+              <kbd className="rounded border px-1.5 py-0.5 font-mono text-[9px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>⌘K</kbd>
+            </button>
+          </div>
+        )}
+
         {/* Navigation */}
-        <nav className="flex-1 overflow-y-auto px-2 py-3">
+        <nav className="relative flex-1 overflow-y-auto px-2 pb-3">
           {TAB_GROUPS.map((group) => (
             <div key={group.label} className="mb-1">
               {isOpen ? (
                 <button
                   onClick={() => toggleGroup(group.label)}
-                  className="flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-[1.2px] transition"
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 font-mono text-[9px] font-bold uppercase tracking-[0.24em] transition"
                   style={{ color: "var(--text-muted)" }}
                 >
                   {group.label}
@@ -184,23 +203,24 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
                         <button
                           key={tabId}
                           onClick={() => { onSelectTab(tabId); if (window.innerWidth < 1024) onToggle(); }}
-                          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-[15px] font-medium transition-all duration-300"
+                          className="group relative flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-[14px] font-medium transition-all duration-300"
                           style={{
                             background: active
-                              ? "linear-gradient(135deg, rgba(201, 100, 66,0.12), rgba(217, 165, 116,0.06))"
+                              ? "linear-gradient(90deg, rgba(217,119,87,0.16) 0%, rgba(217,119,87,0.04) 72%, transparent 100%)"
                               : "transparent",
-                            color: active ? "var(--accent)" : "var(--text-secondary)",
-                            border: active ? "1px solid rgba(201, 100, 66,0.15)" : "1px solid transparent",
-                            boxShadow: active ? "0 0 15px rgba(201, 100, 66,0.08), inset 0 1px 0 rgba(255,255,255,0.04)" : "none",
+                            color: active ? "var(--text-primary)" : "var(--text-secondary)",
+                            border: active ? "1px solid rgba(217,119,87,0.20)" : "1px solid transparent",
+                            boxShadow: active ? "inset 0 1px 0 rgba(255,255,255,0.04), 0 0 20px rgba(217,119,87,0.08)" : "none",
                           }}
                           title={meta.label}
                         >
-                          <span className={`text-lg transition-transform duration-300 ${active ? "scale-110" : "group-hover:scale-105"}`}>{meta.icon}</span>
+                          {active && <span className="absolute bottom-1.5 left-0 top-1.5 w-0.5 rounded-full" style={{ background: "var(--accent)", boxShadow: "0 0 10px var(--accent)" }} />}
+                          <span className={`w-5 text-center font-mono text-[15px] transition-transform duration-300 ${active ? "scale-110" : "group-hover:scale-105"}`} style={{ color: active ? "var(--accent)" : "var(--text-tertiary)" }}>{meta.icon}</span>
                           {isOpen && <span className="truncate">{meta.label}</span>}
                           {active && isOpen && (
                             <div
                               className="ml-auto h-2 w-2 rounded-full glow-pulse"
-                              style={{ background: "var(--accent)", boxShadow: "0 0 8px rgba(201, 100, 66,0.5)" }}
+                              style={{ background: "var(--accent)", boxShadow: "0 0 8px rgba(217,119,87,0.5)" }}
                             />
                           )}
                         </button>
@@ -215,7 +235,7 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
 
         {/* API Status */}
         {isOpen && (
-          <div className="shrink-0 border-t px-4 py-3" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+          <div className="relative shrink-0 border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
             <div className="mb-2 text-[10px] font-semibold uppercase tracking-[1px]" style={{ color: "var(--text-muted)" }}>
               API Status
             </div>
@@ -237,7 +257,7 @@ export default function Sidebar({ currentTab, onSelectTab, isOpen, onToggle, the
         )}
 
         {/* Footer — Theme toggle + info */}
-        <div className="shrink-0 border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
+        <div className="relative shrink-0 border-t px-4 py-3" style={{ borderColor: "var(--border)" }}>
           {isOpen ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">

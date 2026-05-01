@@ -4,6 +4,8 @@
 
 Global Signal is a Next.js 14 (App Router) full-stack application. The browser never touches an external API directly — all third-party calls are made from Next.js API routes on the server, keeping API keys out of the client bundle and enabling server-side caching via `next: { revalidate }`.
 
+The production entry point is `app/page.tsx`. It renders the Next.js hero/dashboard experience directly and deep-links to tabs through `/?tab=<id>`. The root route should never redirect to untracked static prototypes under `public/`; that failure mode can produce a Vercel 404 even when the Next.js build succeeds.
+
 ```
 Browser
   │
@@ -181,3 +183,30 @@ The `Dashboard.tsx` component owns:
 | `/api/stream` | force-dynamic | SSE — never cached |
 | `/api/health-check` | force-dynamic | Real-time ping — never cached |
 | `/api/ai-query` | force-dynamic | User queries — never cached |
+
+---
+
+## Deployment Architecture
+
+Global Signal should be deployed as a server-rendered Next.js app, not a static export, because `/api/*` routes and `/api/stream` need server runtime support.
+
+Recommended Vercel settings:
+
+| Setting | Value |
+|---|---|
+| Framework preset | Next.js |
+| Root directory | Repository root (`.`) |
+| Install command | `npm ci` |
+| Build command | `npm run build` |
+| Output directory | Leave unset / Vercel managed |
+
+The root `vercel.json` pins the framework and commands. `next.config.js` uses `output: "standalone"` so the Dockerfile can copy `.next/standalone`; Vercel still handles the Next.js output automatically.
+
+Post-deploy smoke tests:
+
+```bash
+curl -I https://global-signal.vercel.app/
+curl https://global-signal.vercel.app/api/health-check
+```
+
+If `curl -I` shows `x-vercel-error: DEPLOYMENT_NOT_FOUND`, the request never reached this Next.js app. Reconnect the GitHub repository to a Vercel project or update the demo URL to the active deployment domain.

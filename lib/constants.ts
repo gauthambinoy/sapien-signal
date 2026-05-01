@@ -1,7 +1,7 @@
 export const COLORS = [
-  "#6EE7B7", "#FCD34D", "#F87171", "#60A5FA",
-  "#C4B5FD", "#FB923C", "#34D399", "#F472B6",
-  "#818CF8", "#FBBF24", "#A78BFA", "#2DD4BF",
+  "#D97757", "#E8A260", "#D9B679", "#E5C9A3",
+  "#8FA876", "#D87E6E", "#7AAAD0", "#9F7494",
+  "#C49460", "#D45A48", "#B85F3E", "#B8A88A",
 ];
 
 export const WEATHER_ICONS: Record<number, string> = {
@@ -41,22 +41,22 @@ export const CITIES = [
 ];
 
 export const TABS = [
-  { id: "overview",    icon: "🌍", label: "Overview" },
-  { id: "weather",     icon: "🌤", label: "Weather" },
-  { id: "quakes",      icon: "🌊", label: "Earthquakes" },
-  { id: "markets",     icon: "💹", label: "Markets" },
-  { id: "forex",       icon: "💱", label: "Forex" },
-  { id: "economy",     icon: "📊", label: "Economy" },
-  { id: "energy",      icon: "🔋", label: "Energy" },
-  { id: "health",      icon: "🏥", label: "Health" },
-  { id: "countries",   icon: "🗺",  label: "Countries" },
-  { id: "space",       icon: "🚀", label: "Space & ISS" },
-  { id: "air",         icon: "💨", label: "Air Quality" },
-  { id: "tech",        icon: "⚡", label: "Tech Pulse" },
-  { id: "news",        icon: "📰", label: "News" },
-  { id: "datasources", icon: "🔗", label: "Data Sources" },
-  { id: "ai",          icon: "🤖", label: "AI Query" },
-  { id: "system",      icon: "🔧", label: "System Health" },
+  { id: "overview",    icon: "◐", label: "Overview" },
+  { id: "weather",     icon: "☁", label: "Weather" },
+  { id: "quakes",      icon: "◬", label: "Earthquakes" },
+  { id: "markets",     icon: "$", label: "Markets" },
+  { id: "forex",       icon: "⇄", label: "Forex" },
+  { id: "economy",     icon: "◴", label: "Economy" },
+  { id: "energy",      icon: "⚡", label: "Energy" },
+  { id: "health",      icon: "+", label: "Health" },
+  { id: "countries",   icon: "⌖", label: "Countries" },
+  { id: "space",       icon: "◌", label: "Space & ISS" },
+  { id: "air",         icon: "⌬", label: "Air Quality" },
+  { id: "tech",        icon: "⌘", label: "Tech Pulse" },
+  { id: "news",        icon: "☰", label: "News" },
+  { id: "datasources", icon: "▦", label: "Data Sources" },
+  { id: "ai",          icon: "◆", label: "AI Query" },
+  { id: "system",      icon: "◎", label: "System Health" },
 ] as const;
 
 export type TabId = (typeof TABS)[number]["id"];
