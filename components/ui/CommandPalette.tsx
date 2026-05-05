@@ -191,8 +191,8 @@ export default function CommandPalette({ onSelectTab, currentTab }: CommandPalet
 
               {/* Results */}
               <div ref={listRef} className="max-h-80 overflow-y-auto py-2" style={{ scrollbarWidth: "thin" }}>
-                {grouped.map((group) => (
-                  <div key={group.cat}>
+                {grouped.map((group, groupIndex) => (
+                  <div key={`${group.cat}-${groupIndex}`}>
                     <div className="flex items-center gap-2 px-5 pb-1 pt-3 text-[10px] font-bold uppercase tracking-[1.5px]" style={{ color: "rgba(255,255,255,0.3)" }}>
                       <span>{categoryIcon(group.cat)}</span>
                       <span>{categoryLabel(group.cat)}</span>

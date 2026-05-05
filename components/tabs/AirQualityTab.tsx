@@ -25,7 +25,7 @@ export default function AirQualityTab() {
   if (stations.length === 0) {
     return (
       <div className="flex h-40 items-center justify-center text-sm" style={{ color: "var(--text-tertiary)" }}>
-        No recent air quality data available from OpenAQ.
+        No recent air quality data available from Open-Meteo.
       </div>
     );
   }
@@ -62,8 +62,8 @@ export default function AirQualityTab() {
       </div>
 
       <div className="rounded-lg border px-4 py-2 text-xs" style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text-tertiary)" }}>
-        <a href="https://openaq.org" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>
-          OpenAQ ↗
+        <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener noreferrer" style={{ color: "var(--accent)" }}>
+          Open-Meteo Air Quality ↗
         </a>{" "}— open air quality data · free, no key required
       </div>
     </div>

@@ -99,7 +99,7 @@ export const FREE_APIS: ApiSource[] = [
   { id:"f42", name:"Sunrise-Sunset Astro", description:"Astronomical twilight and noon times", url:"https://api.sunrise-sunset.org/json", docsUrl:"https://sunrise-sunset.org/api", keyRequired:false, rateLimit:"Unlimited", category:"space", tier:"free" },
 
   // ── Environment ──
-  { id:"f43", name:"OpenAQ", description:"Global air quality readings from stations", url:"https://api.openaq.org/v2/latest", docsUrl:"https://docs.openaq.org", keyRequired:false, rateLimit:"Unlimited", category:"environment", tier:"free" },
+  { id:"f43", name:"Open-Meteo Air Quality", description:"Current air quality forecasts by coordinate", url:"https://air-quality-api.open-meteo.com/v1/air-quality", docsUrl:"https://open-meteo.com/en/docs/air-quality-api", keyRequired:false, rateLimit:"Fair use", category:"environment", tier:"free" },
   { id:"f44", name:"USGS Water Services", description:"Real-time river & stream flow data", url:"https://waterservices.usgs.gov/nwis/iv/", docsUrl:"https://waterservices.usgs.gov", keyRequired:false, rateLimit:"Unlimited", category:"environment", tier:"free" },
   { id:"f45", name:"Open-Meteo Flood", description:"River flood forecasting", url:"https://flood-api.open-meteo.com/v1/flood", docsUrl:"https://open-meteo.com/en/docs/flood-api", keyRequired:false, rateLimit:"10,000/day", category:"environment", tier:"free" },
 
